@@ -1,0 +1,1692 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0EB8AD414457AD99A672CEE7 /* Pods_Husb_HusbUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 296B101976A73FB99EF1743A /* Pods_Husb_HusbUITests.framework */; };
+		2A552D7BE73A258685D5CE11 /* Pods_HusbTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73982322FEAE09EE8E515084 /* Pods_HusbTests.framework */; };
+		E436D2E615A34CC3D90BFA5B /* Pods_Husb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 542BEBEBA0D211B841F65B3C /* Pods_Husb.framework */; };
+		FF2166272686F11600F0F26F /* ChallengeDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2166262686F11600F0F26F /* ChallengeDomain.swift */; };
+		FF2166292686F19300F0F26F /* ChallengeCategoryDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2166282686F19300F0F26F /* ChallengeCategoryDomain.swift */; };
+		FF21662B2686F1A800F0F26F /* MoodDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF21662A2686F1A800F0F26F /* MoodDomain.swift */; };
+		FF21662D2686F1B700F0F26F /* TipsDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF21662C2686F1B700F0F26F /* TipsDomain.swift */; };
+		FF21662F2686F21500F0F26F /* LoveLanguageDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF21662E2686F21500F0F26F /* LoveLanguageDomain.swift */; };
+		FF2166312686F81300F0F26F /* RoleDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2166302686F81300F0F26F /* RoleDomain.swift */; };
+		FF21663426870C4500F0F26F /* AppDIContainer+ViewControllerRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF21663326870C4500F0F26F /* AppDIContainer+ViewControllerRoute.swift */; };
+		FF2166372687102C00F0F26F /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2166362687102C00F0F26F /* PersistenceService.swift */; };
+		FF21663C26871D8F00F0F26F /* ChallengeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF21663B26871D8F00F0F26F /* ChallengeListViewController.swift */; };
+		FF21663E268740D000F0F26F /* DetailChallengeDescriptionCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF21663D268740D000F0F26F /* DetailChallengeDescriptionCollectionCell.swift */; };
+		FF216640268746CD00F0F26F /* DetailChallengeStepCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF21663F268746CD00F0F26F /* DetailChallengeStepCollectionCell.swift */; };
+		FF216642268748B100F0F26F /* DetailChallengeFunFactCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF216641268748B100F0F26F /* DetailChallengeFunFactCollectionCell.swift */; };
+		FF216644268784BD00F0F26F /* ChallengeStepDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF216643268784BD00F0F26F /* ChallengeStepDomain.swift */; };
+		FF2166462687926F00F0F26F /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2166452687926F00F0F26F /* UIViewController.swift */; };
+		FF31FDAE269626BE009890FF /* KDCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = FF31FDAD269626BE009890FF /* KDCalendar */; };
+		FF31FDB126962724009890FF /* SwiftMessages in Frameworks */ = {isa = PBXBuildFile; productRef = FF31FDB026962724009890FF /* SwiftMessages */; };
+		FF31FDBA26962A30009890FF /* MessageKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF31FDB926962A30009890FF /* MessageKit.swift */; };
+		FF31FDBE26962F83009890FF /* DatePickerMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF31FDBD26962F83009890FF /* DatePickerMessageView.swift */; };
+		FF31FDC026963C2F009890FF /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF31FDBF26963C2F009890FF /* Date.swift */; };
+		FF31FDC226963EDA009890FF /* CompletedChallengeMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF31FDC126963EDA009890FF /* CompletedChallengeMessageView.swift */; };
+		FF31FDCA26977B1D009890FF /* CalendarDateCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF31FDC926977B1D009890FF /* CalendarDateCollectionView.swift */; };
+		FF31FDCC2697824F009890FF /* ConnectWithPartnerMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF31FDCB2697824F009890FF /* ConnectWithPartnerMessageView.swift */; };
+		FF31FDD02698A97E009890FF /* CalendarDateCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF31FDCF2698A97E009890FF /* CalendarDateCollectionCell.swift */; };
+		FF31FDD22698B8F6009890FF /* CalendarChallengeCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF31FDD12698B8F6009890FF /* CalendarChallengeCollectionView.swift */; };
+		FF31FDD426995DF5009890FF /* UncompletedChallengeCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF31FDD326995DF5009890FF /* UncompletedChallengeCollectionCell.swift */; };
+		FF31FDD626995E03009890FF /* CompletedChallengeCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF31FDD526995E03009890FF /* CompletedChallengeCollectionCell.swift */; };
+		FF31FDDE26999A71009890FF /* ImageViewerMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF31FDDD26999A71009890FF /* ImageViewerMessageView.swift */; };
+		FF31FDE02699CA3F009890FF /* DashboardNotificationCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF31FDDF2699CA3F009890FF /* DashboardNotificationCollectionView.swift */; };
+		FF31FDE22699CB45009890FF /* NotificationCollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF31FDE12699CB45009890FF /* NotificationCollectionHeaderView.swift */; };
+		FF31FDE4269A3FB3009890FF /* NotificationCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF31FDE3269A3FB3009890FF /* NotificationCollectionCell.swift */; };
+		FF31FDE7269A497C009890FF /* MessageFromWifeNotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF31FDE6269A497C009890FF /* MessageFromWifeNotificationViewController.swift */; };
+		FF31FDE9269A4E4E009890FF /* NotificationDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF31FDE8269A4E4E009890FF /* NotificationDomain.swift */; };
+		FF31FDEB269A4FA3009890FF /* UserDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF31FDEA269A4FA3009890FF /* UserDomain.swift */; };
+		FF31FDED269A4FD0009890FF /* MessageDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF31FDEC269A4FD0009890FF /* MessageDomain.swift */; };
+		FF31FDF0269ADC7D009890FF /* ChallengeRequestNotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF31FDEF269ADC7D009890FF /* ChallengeRequestNotificationViewController.swift */; };
+		FF31FDF2269B531E009890FF /* DashboardProfileTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF31FDF1269B531E009890FF /* DashboardProfileTableView.swift */; };
+		FF31FDF6269B55D4009890FF /* ProfileInfoTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF31FDF5269B55D4009890FF /* ProfileInfoTableCell.swift */; };
+		FF31FE01269CA8CC009890FF /* FirstOnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF31FE00269CA8CC009890FF /* FirstOnBoardingViewController.swift */; };
+		FF31FE03269CABA2009890FF /* SecondOnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF31FE02269CABA2009890FF /* SecondOnBoardingViewController.swift */; };
+		FF31FE05269CABAB009890FF /* ThirdOnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF31FE04269CABAB009890FF /* ThirdOnBoardingViewController.swift */; };
+		FF31FE07269CB5A4009890FF /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF31FE06269CB5A4009890FF /* Array.swift */; };
+		FF31FE09269CBA54009890FF /* SaveOnBoardingStateUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF31FE08269CBA53009890FF /* SaveOnBoardingStateUseCase.swift */; };
+		FF31FE0D269CBBA0009890FF /* UserDefaultStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF31FE0C269CBBA0009890FF /* UserDefaultStorage.swift */; };
+		FF31FE0F269CBE25009890FF /* FetchOnBoardingStateUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF31FE0E269CBE25009890FF /* FetchOnBoardingStateUseCase.swift */; };
+		FF31FE13269D54E3009890FF /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF31FE12269D54E3009890FF /* CloudKit.framework */; };
+		FF31FE15269D5530009890FF /* RemoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF31FE14269D5530009890FF /* RemoteService.swift */; };
+		FF31FE18269D5990009890FF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF31FE17269D5990009890FF /* User.swift */; };
+		FF31FE1A269D5DEC009890FF /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF31FE19269D5DEC009890FF /* Challenge.swift */; };
+		FF31FE1C269D5ED3009890FF /* ChallengeStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF31FE1B269D5ED3009890FF /* ChallengeStep.swift */; };
+		FF31FE1E269D67D3009890FF /* FunFact.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF31FE1D269D67D3009890FF /* FunFact.swift */; };
+		FF31FE21269D7AD1009890FF /* FetchUserChallengesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF31FE20269D7AD1009890FF /* FetchUserChallengesUseCase.swift */; };
+		FF31FE23269D84C4009890FF /* SaveUserChallengeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF31FE22269D84C4009890FF /* SaveUserChallengeUseCase.swift */; };
+		FF31FE2F269E0BB2009890FF /* SaveUserUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF31FE2E269E0BB2009890FF /* SaveUserUseCase.swift */; };
+		FF31FE33269E0BD7009890FF /* FetchUserUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF31FE32269E0BD7009890FF /* FetchUserUseCase.swift */; };
+		FF31FE35269E34CF009890FF /* ValidateIsUserSignedInUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF31FE34269E34CF009890FF /* ValidateIsUserSignedInUseCase.swift */; };
+		FF4968D42677439F00153484 /* ExploreCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4968D32677439F00153484 /* ExploreCollectionView.swift */; };
+		FF4968D72677847900153484 /* LoveLanguageCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4968D62677847900153484 /* LoveLanguageCollectionCell.swift */; };
+		FF4968D926778F2400153484 /* ExploreCollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4968D826778F2400153484 /* ExploreCollectionHeaderView.swift */; };
+		FF9A5B5526A5E04A00D697D4 /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = FF9A5B5426A5E04A00D697D4 /* SkeletonView */; };
+		FF9A5B5826A6B32E00D697D4 /* Reachability in Frameworks */ = {isa = PBXBuildFile; productRef = FF9A5B5726A6B32E00D697D4 /* Reachability */; };
+		FFA978E3267F740F00CBB59C /* DetailChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA978E2267F740F00CBB59C /* DetailChallengeViewController.swift */; };
+		FFA978E6267F75EA00CBB59C /* DetailChallengeCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA978E5267F75EA00CBB59C /* DetailChallengeCollectionView.swift */; };
+		FFA978E8267F77DE00CBB59C /* ChallengeCategoryCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA978E7267F77DE00CBB59C /* ChallengeCategoryCollectionView.swift */; };
+		FFA978EC267F797E00CBB59C /* DetailChallengeActionCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA978EB267F797E00CBB59C /* DetailChallengeActionCollectionCell.swift */; };
+		FFA978F02680825800CBB59C /* DetailChallengeCollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA978EF2680825800CBB59C /* DetailChallengeCollectionHeaderView.swift */; };
+		FFC4544A269F710E0094FDA8 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC45449269F710E0094FDA8 /* String.swift */; };
+		FFC4544D269F88210094FDA8 /* CryptoSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FFC4544C269F88210094FDA8 /* CryptoSwift */; };
+		FFC4544F269F8B4A0094FDA8 /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC4544E269F8B4A0094FDA8 /* Auth.swift */; };
+		FFC45451269FA5010094FDA8 /* LoadingMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC45450269FA5010094FDA8 /* LoadingMessageView.swift */; };
+		FFC45453269FA52C0094FDA8 /* QRCodeMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC45452269FA52C0094FDA8 /* QRCodeMessageView.swift */; };
+		FFC4546026A05A6A0094FDA8 /* ScanQRCodeMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC4545F26A05A690094FDA8 /* ScanQRCodeMessageView.swift */; };
+		FFC4546326A1CA0B0094FDA8 /* ConnectProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC4546226A1CA0A0094FDA8 /* ConnectProfileViewController.swift */; };
+		FFC4546826A335120094FDA8 /* loading-animation.json in Resources */ = {isa = PBXBuildFile; fileRef = FFC4546726A335120094FDA8 /* loading-animation.json */; };
+		FFC4546A26A478AC0094FDA8 /* EmptyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC4546926A478AC0094FDA8 /* EmptyCollectionViewCell.swift */; };
+		FFDAC8B02674B502000D3B3B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDAC8AF2674B502000D3B3B /* AppDelegate.swift */; };
+		FFDAC8B22674B502000D3B3B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDAC8B12674B502000D3B3B /* SceneDelegate.swift */; };
+		FFDAC8BA2674B502000D3B3B /* Husb.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FFDAC8B82674B502000D3B3B /* Husb.xcdatamodeld */; };
+		FFDAC8BC2674B505000D3B3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFDAC8BB2674B505000D3B3B /* Assets.xcassets */; };
+		FFDAC8BF2674B505000D3B3B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFDAC8BD2674B505000D3B3B /* LaunchScreen.storyboard */; };
+		FFDAC8CA2674B505000D3B3B /* HusbTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDAC8C92674B505000D3B3B /* HusbTests.swift */; };
+		FFDAC8D52674B505000D3B3B /* HusbUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDAC8D42674B505000D3B3B /* HusbUITests.swift */; };
+		FFDAC8FF2674B918000D3B3B /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDAC8FE2674B918000D3B3B /* OnBoardingViewController.swift */; };
+		FFDAC9042674B91F000D3B3B /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDAC9032674B91F000D3B3B /* SignInViewController.swift */; };
+		FFDAC9092674B928000D3B3B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDAC9082674B928000D3B3B /* SignUpViewController.swift */; };
+		FFDAC90E2674B969000D3B3B /* LaunchPadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDAC90D2674B969000D3B3B /* LaunchPadViewController.swift */; };
+		FFDAC9132674B9B2000D3B3B /* DashboardChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDAC9122674B9B2000D3B3B /* DashboardChallengeViewController.swift */; };
+		FFDAC9182674B9B8000D3B3B /* DashboardExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDAC9172674B9B8000D3B3B /* DashboardExploreViewController.swift */; };
+		FFDAC91D2674B9BE000D3B3B /* DashboardCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDAC91C2674B9BE000D3B3B /* DashboardCalendarViewController.swift */; };
+		FFDAC9222674B9C9000D3B3B /* DashboardNotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDAC9212674B9C9000D3B3B /* DashboardNotificationViewController.swift */; };
+		FFDAC9272674B9D1000D3B3B /* DashboardProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDAC9262674B9D1000D3B3B /* DashboardProfileViewController.swift */; };
+		FFDAC92C2674BAC7000D3B3B /* AppDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDAC92B2674BAC7000D3B3B /* AppDIContainer.swift */; };
+		FFDAC98E2674C4CE000D3B3B /* UseCaseFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDAC98D2674C4CE000D3B3B /* UseCaseFactory.swift */; };
+		FFDAC9932674C4D8000D3B3B /* AppDIContainer+UseCaseFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDAC9922674C4D8000D3B3B /* AppDIContainer+UseCaseFactory.swift */; };
+		FFDAC9A42674CE4F000D3B3B /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDAC9A32674CE4F000D3B3B /* UIImage.swift */; };
+		FFDAC9AC2674D0E2000D3B3B /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDAC9AB2674D0E2000D3B3B /* UIColor.swift */; };
+		FFDAC9B52674DB8F000D3B3B /* DashboardChallengeCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDAC9B42674DB8F000D3B3B /* DashboardChallengeCollectionView.swift */; };
+		FFDAC9BB2674E068000D3B3B /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = FFDAC9BA2674E068000D3B3B /* SnapKit */; };
+		FFDAC9C02674E2EC000D3B3B /* CurrentChallengeCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDAC9BF2674E2EC000D3B3B /* CurrentChallengeCollectionCell.swift */; };
+		FFDAC9C526752A7E000D3B3B /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDAC9C426752A7E000D3B3B /* SectionHeaderView.swift */; };
+		FFDAC9CA26754133000D3B3B /* SimpleThingsCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDAC9C926754133000D3B3B /* SimpleThingsCollectionCell.swift */; };
+		FFDAC9CF26754425000D3B3B /* WifeMoodCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDAC9CE26754425000D3B3B /* WifeMoodCollectionCell.swift */; };
+		FFDAC9D92675D21A000D3B3B /* DefaultChallengeCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDAC9D82675D21A000D3B3B /* DefaultChallengeCollectionCell.swift */; };
+		FFDAC9E12675D22E000D3B3B /* TipsCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDAC9E02675D22E000D3B3B /* TipsCollectionCell.swift */; };
+		FFDACA0026766855000D3B3B /* ChallengeCategoryCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDAC9FF26766855000D3B3B /* ChallengeCategoryCollectionCell.swift */; };
+		FFEC88A7268F900E00B8617B /* FunFactDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEC88A6268F900E00B8617B /* FunFactDomain.swift */; };
+		FFEC88A9268F93EE00B8617B /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEC88A8268F93EE00B8617B /* UIView.swift */; };
+		FFEC88AF2690617400B8617B /* Hero in Frameworks */ = {isa = PBXBuildFile; productRef = FFEC88AE2690617400B8617B /* Hero */; };
+		FFEC88B02690617400B8617B /* Hero in Embed Frameworks */ = {isa = PBXBuildFile; productRef = FFEC88AE2690617400B8617B /* Hero */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		FFEC88B3269062E800B8617B /* ExploreSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEC88B2269062E800B8617B /* ExploreSearchViewController.swift */; };
+		FFEC88B62690AAD700B8617B /* ChallengeListCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEC88B52690AAD700B8617B /* ChallengeListCollectionView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FFDAC8C62674B505000D3B3B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FFDAC8A42674B502000D3B3B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FFDAC8AB2674B502000D3B3B;
+			remoteInfo = Husb;
+		};
+		FFDAC8D12674B505000D3B3B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FFDAC8A42674B502000D3B3B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FFDAC8AB2674B502000D3B3B;
+			remoteInfo = Husb;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		FFEC88B12690617400B8617B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				FFEC88B02690617400B8617B /* Hero in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		1D3DD4878740A9C9CDB7076C /* Pods-Husb.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Husb.release.xcconfig"; path = "Target Support Files/Pods-Husb/Pods-Husb.release.xcconfig"; sourceTree = "<group>"; };
+		296B101976A73FB99EF1743A /* Pods_Husb_HusbUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Husb_HusbUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F5A5801EA651C2F04F42091 /* Pods-HusbTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HusbTests.release.xcconfig"; path = "Target Support Files/Pods-HusbTests/Pods-HusbTests.release.xcconfig"; sourceTree = "<group>"; };
+		325CCC6EC9FEFEE09F30DBA9 /* Pods-Husb-HusbUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Husb-HusbUITests.release.xcconfig"; path = "Target Support Files/Pods-Husb-HusbUITests/Pods-Husb-HusbUITests.release.xcconfig"; sourceTree = "<group>"; };
+		42B686044D3C1A4D2D5E602A /* Pods-HusbTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HusbTests.debug.xcconfig"; path = "Target Support Files/Pods-HusbTests/Pods-HusbTests.debug.xcconfig"; sourceTree = "<group>"; };
+		542BEBEBA0D211B841F65B3C /* Pods_Husb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Husb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E3D3CC9D12F1A700F585CBD /* Pods-Husb-HusbUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Husb-HusbUITests.debug.xcconfig"; path = "Target Support Files/Pods-Husb-HusbUITests/Pods-Husb-HusbUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		73982322FEAE09EE8E515084 /* Pods_HusbTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HusbTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D67F4410A9FADDD10F18974B /* Pods-Husb.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Husb.debug.xcconfig"; path = "Target Support Files/Pods-Husb/Pods-Husb.debug.xcconfig"; sourceTree = "<group>"; };
+		FF2166262686F11600F0F26F /* ChallengeDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeDomain.swift; sourceTree = "<group>"; };
+		FF2166282686F19300F0F26F /* ChallengeCategoryDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeCategoryDomain.swift; sourceTree = "<group>"; };
+		FF21662A2686F1A800F0F26F /* MoodDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodDomain.swift; sourceTree = "<group>"; };
+		FF21662C2686F1B700F0F26F /* TipsDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsDomain.swift; sourceTree = "<group>"; };
+		FF21662E2686F21500F0F26F /* LoveLanguageDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoveLanguageDomain.swift; sourceTree = "<group>"; };
+		FF2166302686F81300F0F26F /* RoleDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleDomain.swift; sourceTree = "<group>"; };
+		FF21663326870C4500F0F26F /* AppDIContainer+ViewControllerRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDIContainer+ViewControllerRoute.swift"; sourceTree = "<group>"; };
+		FF2166362687102C00F0F26F /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
+		FF21663B26871D8F00F0F26F /* ChallengeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeListViewController.swift; sourceTree = "<group>"; };
+		FF21663D268740D000F0F26F /* DetailChallengeDescriptionCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailChallengeDescriptionCollectionCell.swift; sourceTree = "<group>"; };
+		FF21663F268746CD00F0F26F /* DetailChallengeStepCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailChallengeStepCollectionCell.swift; sourceTree = "<group>"; };
+		FF216641268748B100F0F26F /* DetailChallengeFunFactCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailChallengeFunFactCollectionCell.swift; sourceTree = "<group>"; };
+		FF216643268784BD00F0F26F /* ChallengeStepDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeStepDomain.swift; sourceTree = "<group>"; };
+		FF2166452687926F00F0F26F /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		FF31FDB926962A30009890FF /* MessageKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageKit.swift; sourceTree = "<group>"; };
+		FF31FDBD26962F83009890FF /* DatePickerMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerMessageView.swift; sourceTree = "<group>"; };
+		FF31FDBF26963C2F009890FF /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		FF31FDC126963EDA009890FF /* CompletedChallengeMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedChallengeMessageView.swift; sourceTree = "<group>"; };
+		FF31FDC926977B1D009890FF /* CalendarDateCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDateCollectionView.swift; sourceTree = "<group>"; };
+		FF31FDCB2697824F009890FF /* ConnectWithPartnerMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectWithPartnerMessageView.swift; sourceTree = "<group>"; };
+		FF31FDCF2698A97E009890FF /* CalendarDateCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDateCollectionCell.swift; sourceTree = "<group>"; };
+		FF31FDD12698B8F6009890FF /* CalendarChallengeCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarChallengeCollectionView.swift; sourceTree = "<group>"; };
+		FF31FDD326995DF5009890FF /* UncompletedChallengeCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UncompletedChallengeCollectionCell.swift; sourceTree = "<group>"; };
+		FF31FDD526995E03009890FF /* CompletedChallengeCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedChallengeCollectionCell.swift; sourceTree = "<group>"; };
+		FF31FDDD26999A71009890FF /* ImageViewerMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewerMessageView.swift; sourceTree = "<group>"; };
+		FF31FDDF2699CA3F009890FF /* DashboardNotificationCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardNotificationCollectionView.swift; sourceTree = "<group>"; };
+		FF31FDE12699CB45009890FF /* NotificationCollectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCollectionHeaderView.swift; sourceTree = "<group>"; };
+		FF31FDE3269A3FB3009890FF /* NotificationCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCollectionCell.swift; sourceTree = "<group>"; };
+		FF31FDE6269A497C009890FF /* MessageFromWifeNotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageFromWifeNotificationViewController.swift; sourceTree = "<group>"; };
+		FF31FDE8269A4E4E009890FF /* NotificationDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationDomain.swift; sourceTree = "<group>"; };
+		FF31FDEA269A4FA3009890FF /* UserDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDomain.swift; sourceTree = "<group>"; };
+		FF31FDEC269A4FD0009890FF /* MessageDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageDomain.swift; sourceTree = "<group>"; };
+		FF31FDEF269ADC7D009890FF /* ChallengeRequestNotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeRequestNotificationViewController.swift; sourceTree = "<group>"; };
+		FF31FDF1269B531E009890FF /* DashboardProfileTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardProfileTableView.swift; sourceTree = "<group>"; };
+		FF31FDF5269B55D4009890FF /* ProfileInfoTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoTableCell.swift; sourceTree = "<group>"; };
+		FF31FE00269CA8CC009890FF /* FirstOnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstOnBoardingViewController.swift; sourceTree = "<group>"; };
+		FF31FE02269CABA2009890FF /* SecondOnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondOnBoardingViewController.swift; sourceTree = "<group>"; };
+		FF31FE04269CABAB009890FF /* ThirdOnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdOnBoardingViewController.swift; sourceTree = "<group>"; };
+		FF31FE06269CB5A4009890FF /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
+		FF31FE08269CBA53009890FF /* SaveOnBoardingStateUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveOnBoardingStateUseCase.swift; sourceTree = "<group>"; };
+		FF31FE0C269CBBA0009890FF /* UserDefaultStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultStorage.swift; sourceTree = "<group>"; };
+		FF31FE0E269CBE25009890FF /* FetchOnBoardingStateUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchOnBoardingStateUseCase.swift; sourceTree = "<group>"; };
+		FF31FE10269D54A5009890FF /* Husb.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Husb.entitlements; sourceTree = "<group>"; };
+		FF31FE12269D54E3009890FF /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		FF31FE14269D5530009890FF /* RemoteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteService.swift; sourceTree = "<group>"; };
+		FF31FE17269D5990009890FF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		FF31FE19269D5DEC009890FF /* Challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
+		FF31FE1B269D5ED3009890FF /* ChallengeStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeStep.swift; sourceTree = "<group>"; };
+		FF31FE1D269D67D3009890FF /* FunFact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunFact.swift; sourceTree = "<group>"; };
+		FF31FE20269D7AD1009890FF /* FetchUserChallengesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchUserChallengesUseCase.swift; sourceTree = "<group>"; };
+		FF31FE22269D84C4009890FF /* SaveUserChallengeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveUserChallengeUseCase.swift; sourceTree = "<group>"; };
+		FF31FE2E269E0BB2009890FF /* SaveUserUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveUserUseCase.swift; sourceTree = "<group>"; };
+		FF31FE32269E0BD7009890FF /* FetchUserUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchUserUseCase.swift; sourceTree = "<group>"; };
+		FF31FE34269E34CF009890FF /* ValidateIsUserSignedInUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateIsUserSignedInUseCase.swift; sourceTree = "<group>"; };
+		FF4968D32677439F00153484 /* ExploreCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreCollectionView.swift; sourceTree = "<group>"; };
+		FF4968D62677847900153484 /* LoveLanguageCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoveLanguageCollectionCell.swift; sourceTree = "<group>"; };
+		FF4968D826778F2400153484 /* ExploreCollectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreCollectionHeaderView.swift; sourceTree = "<group>"; };
+		FFA978E2267F740F00CBB59C /* DetailChallengeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailChallengeViewController.swift; sourceTree = "<group>"; };
+		FFA978E5267F75EA00CBB59C /* DetailChallengeCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailChallengeCollectionView.swift; sourceTree = "<group>"; };
+		FFA978E7267F77DE00CBB59C /* ChallengeCategoryCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeCategoryCollectionView.swift; sourceTree = "<group>"; };
+		FFA978EB267F797E00CBB59C /* DetailChallengeActionCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailChallengeActionCollectionCell.swift; sourceTree = "<group>"; };
+		FFA978EF2680825800CBB59C /* DetailChallengeCollectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailChallengeCollectionHeaderView.swift; sourceTree = "<group>"; };
+		FFC45449269F710E0094FDA8 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		FFC4544E269F8B4A0094FDA8 /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
+		FFC45450269FA5010094FDA8 /* LoadingMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingMessageView.swift; sourceTree = "<group>"; };
+		FFC45452269FA52C0094FDA8 /* QRCodeMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeMessageView.swift; sourceTree = "<group>"; };
+		FFC4545F26A05A690094FDA8 /* ScanQRCodeMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanQRCodeMessageView.swift; sourceTree = "<group>"; };
+		FFC4546226A1CA0A0094FDA8 /* ConnectProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectProfileViewController.swift; sourceTree = "<group>"; };
+		FFC4546726A335120094FDA8 /* loading-animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "loading-animation.json"; sourceTree = "<group>"; };
+		FFC4546926A478AC0094FDA8 /* EmptyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCollectionViewCell.swift; sourceTree = "<group>"; };
+		FFDAC8AC2674B502000D3B3B /* Husb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Husb.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFDAC8AF2674B502000D3B3B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FFDAC8B12674B502000D3B3B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		FFDAC8B92674B502000D3B3B /* Husb.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Husb.xcdatamodel; sourceTree = "<group>"; };
+		FFDAC8BB2674B505000D3B3B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FFDAC8BE2674B505000D3B3B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FFDAC8C02674B505000D3B3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FFDAC8C52674B505000D3B3B /* HusbTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HusbTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFDAC8C92674B505000D3B3B /* HusbTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HusbTests.swift; sourceTree = "<group>"; };
+		FFDAC8CB2674B505000D3B3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FFDAC8D02674B505000D3B3B /* HusbUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HusbUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFDAC8D42674B505000D3B3B /* HusbUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HusbUITests.swift; sourceTree = "<group>"; };
+		FFDAC8D62674B505000D3B3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FFDAC8FE2674B918000D3B3B /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
+		FFDAC9032674B91F000D3B3B /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		FFDAC9082674B928000D3B3B /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		FFDAC90D2674B969000D3B3B /* LaunchPadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchPadViewController.swift; sourceTree = "<group>"; };
+		FFDAC9122674B9B2000D3B3B /* DashboardChallengeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardChallengeViewController.swift; sourceTree = "<group>"; };
+		FFDAC9172674B9B8000D3B3B /* DashboardExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardExploreViewController.swift; sourceTree = "<group>"; };
+		FFDAC91C2674B9BE000D3B3B /* DashboardCalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardCalendarViewController.swift; sourceTree = "<group>"; };
+		FFDAC9212674B9C9000D3B3B /* DashboardNotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardNotificationViewController.swift; sourceTree = "<group>"; };
+		FFDAC9262674B9D1000D3B3B /* DashboardProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardProfileViewController.swift; sourceTree = "<group>"; };
+		FFDAC92B2674BAC7000D3B3B /* AppDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDIContainer.swift; sourceTree = "<group>"; };
+		FFDAC98D2674C4CE000D3B3B /* UseCaseFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseFactory.swift; sourceTree = "<group>"; };
+		FFDAC9922674C4D8000D3B3B /* AppDIContainer+UseCaseFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDIContainer+UseCaseFactory.swift"; sourceTree = "<group>"; };
+		FFDAC9A32674CE4F000D3B3B /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		FFDAC9AB2674D0E2000D3B3B /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		FFDAC9B42674DB8F000D3B3B /* DashboardChallengeCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardChallengeCollectionView.swift; sourceTree = "<group>"; };
+		FFDAC9BF2674E2EC000D3B3B /* CurrentChallengeCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentChallengeCollectionCell.swift; sourceTree = "<group>"; };
+		FFDAC9C426752A7E000D3B3B /* SectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
+		FFDAC9C926754133000D3B3B /* SimpleThingsCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleThingsCollectionCell.swift; sourceTree = "<group>"; };
+		FFDAC9CE26754425000D3B3B /* WifeMoodCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WifeMoodCollectionCell.swift; sourceTree = "<group>"; };
+		FFDAC9D82675D21A000D3B3B /* DefaultChallengeCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultChallengeCollectionCell.swift; sourceTree = "<group>"; };
+		FFDAC9E02675D22E000D3B3B /* TipsCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsCollectionCell.swift; sourceTree = "<group>"; };
+		FFDAC9FF26766855000D3B3B /* ChallengeCategoryCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeCategoryCollectionCell.swift; sourceTree = "<group>"; };
+		FFEC88A6268F900E00B8617B /* FunFactDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunFactDomain.swift; sourceTree = "<group>"; };
+		FFEC88A8268F93EE00B8617B /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		FFEC88B2269062E800B8617B /* ExploreSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreSearchViewController.swift; sourceTree = "<group>"; };
+		FFEC88B52690AAD700B8617B /* ChallengeListCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeListCollectionView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FFDAC8A92674B502000D3B3B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF31FE13269D54E3009890FF /* CloudKit.framework in Frameworks */,
+				FFEC88AF2690617400B8617B /* Hero in Frameworks */,
+				FF31FDAE269626BE009890FF /* KDCalendar in Frameworks */,
+				FF31FDB126962724009890FF /* SwiftMessages in Frameworks */,
+				FF9A5B5826A6B32E00D697D4 /* Reachability in Frameworks */,
+				FF9A5B5526A5E04A00D697D4 /* SkeletonView in Frameworks */,
+				FFDAC9BB2674E068000D3B3B /* SnapKit in Frameworks */,
+				E436D2E615A34CC3D90BFA5B /* Pods_Husb.framework in Frameworks */,
+				FFC4544D269F88210094FDA8 /* CryptoSwift in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FFDAC8C22674B505000D3B3B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A552D7BE73A258685D5CE11 /* Pods_HusbTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FFDAC8CD2674B505000D3B3B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0EB8AD414457AD99A672CEE7 /* Pods_Husb_HusbUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		54944F9F93E2AF74145DC29E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D67F4410A9FADDD10F18974B /* Pods-Husb.debug.xcconfig */,
+				1D3DD4878740A9C9CDB7076C /* Pods-Husb.release.xcconfig */,
+				6E3D3CC9D12F1A700F585CBD /* Pods-Husb-HusbUITests.debug.xcconfig */,
+				325CCC6EC9FEFEE09F30DBA9 /* Pods-Husb-HusbUITests.release.xcconfig */,
+				42B686044D3C1A4D2D5E602A /* Pods-HusbTests.debug.xcconfig */,
+				2F5A5801EA651C2F04F42091 /* Pods-HusbTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		FF2166322686FDED00F0F26F /* AuthenticationFlow */ = {
+			isa = PBXGroup;
+			children = (
+				FFDAC9672674C00E000D3B3B /* SignInUI */,
+				FFDAC9682674C021000D3B3B /* SignUpUI */,
+			);
+			path = AuthenticationFlow;
+			sourceTree = "<group>";
+		};
+		FF2166352687100700F0F26F /* PersistenceStorage */ = {
+			isa = PBXGroup;
+			children = (
+				FF31FDDB2699839B009890FF /* Entity */,
+				FF2166362687102C00F0F26F /* PersistenceService.swift */,
+			);
+			path = PersistenceStorage;
+			sourceTree = "<group>";
+		};
+		FF2166382687172A00F0F26F /* RemoteStorage */ = {
+			isa = PBXGroup;
+			children = (
+				FF31FE16269D597F009890FF /* Entity */,
+				FF31FE14269D5530009890FF /* RemoteService.swift */,
+			);
+			path = RemoteStorage;
+			sourceTree = "<group>";
+		};
+		FF21663926871D5600F0F26F /* ChallengeListUI */ = {
+			isa = PBXGroup;
+			children = (
+				FF21663B26871D8F00F0F26F /* ChallengeListViewController.swift */,
+			);
+			path = ChallengeListUI;
+			sourceTree = "<group>";
+		};
+		FF31FDB326962759009890FF /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				FF31FDF3269B5506009890FF /* UITableViews */,
+				FF31FDF4269B5596009890FF /* UITableViewCells */,
+				FF31FDB426962838009890FF /* UICollectionViews */,
+				FF31FDB526962843009890FF /* UICollectionViewCells */,
+				FF31FDB626962855009890FF /* UICollectionReusableViews */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		FF31FDB426962838009890FF /* UICollectionViews */ = {
+			isa = PBXGroup;
+			children = (
+				FF4968D32677439F00153484 /* ExploreCollectionView.swift */,
+				FFA978E5267F75EA00CBB59C /* DetailChallengeCollectionView.swift */,
+				FFA978E7267F77DE00CBB59C /* ChallengeCategoryCollectionView.swift */,
+				FFDAC9B42674DB8F000D3B3B /* DashboardChallengeCollectionView.swift */,
+				FFEC88B52690AAD700B8617B /* ChallengeListCollectionView.swift */,
+				FF31FDC926977B1D009890FF /* CalendarDateCollectionView.swift */,
+				FF31FDD12698B8F6009890FF /* CalendarChallengeCollectionView.swift */,
+				FF31FDDF2699CA3F009890FF /* DashboardNotificationCollectionView.swift */,
+			);
+			path = UICollectionViews;
+			sourceTree = "<group>";
+		};
+		FF31FDB526962843009890FF /* UICollectionViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				FF4968D62677847900153484 /* LoveLanguageCollectionCell.swift */,
+				FF4968D826778F2400153484 /* ExploreCollectionHeaderView.swift */,
+				FFA978EF2680825800CBB59C /* DetailChallengeCollectionHeaderView.swift */,
+				FFA978EB267F797E00CBB59C /* DetailChallengeActionCollectionCell.swift */,
+				FF21663D268740D000F0F26F /* DetailChallengeDescriptionCollectionCell.swift */,
+				FF21663F268746CD00F0F26F /* DetailChallengeStepCollectionCell.swift */,
+				FF216641268748B100F0F26F /* DetailChallengeFunFactCollectionCell.swift */,
+				FFDAC9D82675D21A000D3B3B /* DefaultChallengeCollectionCell.swift */,
+				FFDAC9BF2674E2EC000D3B3B /* CurrentChallengeCollectionCell.swift */,
+				FFDAC9C926754133000D3B3B /* SimpleThingsCollectionCell.swift */,
+				FFDAC9E02675D22E000D3B3B /* TipsCollectionCell.swift */,
+				FFDAC9CE26754425000D3B3B /* WifeMoodCollectionCell.swift */,
+				FFDAC9FF26766855000D3B3B /* ChallengeCategoryCollectionCell.swift */,
+				FF31FDCF2698A97E009890FF /* CalendarDateCollectionCell.swift */,
+				FF31FDD326995DF5009890FF /* UncompletedChallengeCollectionCell.swift */,
+				FF31FDD526995E03009890FF /* CompletedChallengeCollectionCell.swift */,
+				FF31FDE12699CB45009890FF /* NotificationCollectionHeaderView.swift */,
+				FF31FDE3269A3FB3009890FF /* NotificationCollectionCell.swift */,
+				FFC4546926A478AC0094FDA8 /* EmptyCollectionViewCell.swift */,
+			);
+			path = UICollectionViewCells;
+			sourceTree = "<group>";
+		};
+		FF31FDB626962855009890FF /* UICollectionReusableViews */ = {
+			isa = PBXGroup;
+			children = (
+				FFDAC9C426752A7E000D3B3B /* SectionHeaderView.swift */,
+			);
+			path = UICollectionReusableViews;
+			sourceTree = "<group>";
+		};
+		FF31FDB726962901009890FF /* DashboardUI */ = {
+			isa = PBXGroup;
+			children = (
+				FFDAC9212674B9C9000D3B3B /* DashboardNotificationViewController.swift */,
+			);
+			path = DashboardUI;
+			sourceTree = "<group>";
+		};
+		FF31FDB826962A19009890FF /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				FF31FDBB26962EA4009890FF /* MessageKit */,
+				FFC4544E269F8B4A0094FDA8 /* Auth.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		FF31FDBB26962EA4009890FF /* MessageKit */ = {
+			isa = PBXGroup;
+			children = (
+				FF31FDBC26962F6A009890FF /* CustomViews */,
+				FF31FDB926962A30009890FF /* MessageKit.swift */,
+			);
+			path = MessageKit;
+			sourceTree = "<group>";
+		};
+		FF31FDBC26962F6A009890FF /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				FF31FDBD26962F83009890FF /* DatePickerMessageView.swift */,
+				FF31FDC126963EDA009890FF /* CompletedChallengeMessageView.swift */,
+				FF31FDCB2697824F009890FF /* ConnectWithPartnerMessageView.swift */,
+				FF31FDDD26999A71009890FF /* ImageViewerMessageView.swift */,
+				FFC45450269FA5010094FDA8 /* LoadingMessageView.swift */,
+				FFC45452269FA52C0094FDA8 /* QRCodeMessageView.swift */,
+				FFC4545F26A05A690094FDA8 /* ScanQRCodeMessageView.swift */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		FF31FDDB2699839B009890FF /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		FF31FDE5269A4967009890FF /* MessageFromWifeUI */ = {
+			isa = PBXGroup;
+			children = (
+				FF31FDE6269A497C009890FF /* MessageFromWifeNotificationViewController.swift */,
+			);
+			path = MessageFromWifeUI;
+			sourceTree = "<group>";
+		};
+		FF31FDEE269ADAD6009890FF /* ChallengeRequestUI */ = {
+			isa = PBXGroup;
+			children = (
+				FF31FDEF269ADC7D009890FF /* ChallengeRequestNotificationViewController.swift */,
+			);
+			path = ChallengeRequestUI;
+			sourceTree = "<group>";
+		};
+		FF31FDF3269B5506009890FF /* UITableViews */ = {
+			isa = PBXGroup;
+			children = (
+				FF31FDF1269B531E009890FF /* DashboardProfileTableView.swift */,
+			);
+			path = UITableViews;
+			sourceTree = "<group>";
+		};
+		FF31FDF4269B5596009890FF /* UITableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				FF31FDF5269B55D4009890FF /* ProfileInfoTableCell.swift */,
+			);
+			path = UITableViewCells;
+			sourceTree = "<group>";
+		};
+		FF31FDFF269CA8AC009890FF /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				FF31FE00269CA8CC009890FF /* FirstOnBoardingViewController.swift */,
+				FF31FE02269CABA2009890FF /* SecondOnBoardingViewController.swift */,
+				FF31FE04269CABAB009890FF /* ThirdOnBoardingViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		FF31FE0A269CBB17009890FF /* OnBoarding */ = {
+			isa = PBXGroup;
+			children = (
+				FF31FE08269CBA53009890FF /* SaveOnBoardingStateUseCase.swift */,
+				FF31FE0E269CBE25009890FF /* FetchOnBoardingStateUseCase.swift */,
+			);
+			path = OnBoarding;
+			sourceTree = "<group>";
+		};
+		FF31FE0B269CBB82009890FF /* UserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				FF31FE0C269CBBA0009890FF /* UserDefaultStorage.swift */,
+			);
+			path = UserDefaults;
+			sourceTree = "<group>";
+		};
+		FF31FE11269D54E3009890FF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FF31FE12269D54E3009890FF /* CloudKit.framework */,
+				542BEBEBA0D211B841F65B3C /* Pods_Husb.framework */,
+				296B101976A73FB99EF1743A /* Pods_Husb_HusbUITests.framework */,
+				73982322FEAE09EE8E515084 /* Pods_HusbTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FF31FE16269D597F009890FF /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				FF31FE17269D5990009890FF /* User.swift */,
+				FF31FE19269D5DEC009890FF /* Challenge.swift */,
+				FF31FE1B269D5ED3009890FF /* ChallengeStep.swift */,
+				FF31FE1D269D67D3009890FF /* FunFact.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		FF31FE1F269D7AB1009890FF /* Challenge */ = {
+			isa = PBXGroup;
+			children = (
+				FF31FE20269D7AD1009890FF /* FetchUserChallengesUseCase.swift */,
+				FF31FE22269D84C4009890FF /* SaveUserChallengeUseCase.swift */,
+			);
+			path = Challenge;
+			sourceTree = "<group>";
+		};
+		FF31FE2D269DC8BB009890FF /* User */ = {
+			isa = PBXGroup;
+			children = (
+				FF31FE2E269E0BB2009890FF /* SaveUserUseCase.swift */,
+				FF31FE32269E0BD7009890FF /* FetchUserUseCase.swift */,
+				FF31FE34269E34CF009890FF /* ValidateIsUserSignedInUseCase.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		FFA978DC267F73A900CBB59C /* DashboardUI */ = {
+			isa = PBXGroup;
+			children = (
+				FFDAC91C2674B9BE000D3B3B /* DashboardCalendarViewController.swift */,
+			);
+			path = DashboardUI;
+			sourceTree = "<group>";
+		};
+		FFA978DD267F73B100CBB59C /* DashboardUI */ = {
+			isa = PBXGroup;
+			children = (
+				FFDAC9122674B9B2000D3B3B /* DashboardChallengeViewController.swift */,
+			);
+			path = DashboardUI;
+			sourceTree = "<group>";
+		};
+		FFA978DE267F73BB00CBB59C /* DashboardUI */ = {
+			isa = PBXGroup;
+			children = (
+				FFDAC9172674B9B8000D3B3B /* DashboardExploreViewController.swift */,
+			);
+			path = DashboardUI;
+			sourceTree = "<group>";
+		};
+		FFA978E0267F73D900CBB59C /* DashboardUI */ = {
+			isa = PBXGroup;
+			children = (
+				FFDAC9262674B9D1000D3B3B /* DashboardProfileViewController.swift */,
+			);
+			path = DashboardUI;
+			sourceTree = "<group>";
+		};
+		FFA978E1267F73F200CBB59C /* DetailUI */ = {
+			isa = PBXGroup;
+			children = (
+				FFA978E2267F740F00CBB59C /* DetailChallengeViewController.swift */,
+			);
+			path = DetailUI;
+			sourceTree = "<group>";
+		};
+		FFC4546126A1C9ED0094FDA8 /* ConnectProfileUI */ = {
+			isa = PBXGroup;
+			children = (
+				FFC4546226A1CA0A0094FDA8 /* ConnectProfileViewController.swift */,
+			);
+			path = ConnectProfileUI;
+			sourceTree = "<group>";
+		};
+		FFC4546426A334210094FDA8 /* Lottie */ = {
+			isa = PBXGroup;
+			children = (
+				FFC4546726A335120094FDA8 /* loading-animation.json */,
+			);
+			path = Lottie;
+			sourceTree = "<group>";
+		};
+		FFDAC8A32674B502000D3B3B = {
+			isa = PBXGroup;
+			children = (
+				FFDAC8AE2674B502000D3B3B /* Husb */,
+				FFDAC8C82674B505000D3B3B /* HusbTests */,
+				FFDAC8D32674B505000D3B3B /* HusbUITests */,
+				FFDAC8AD2674B502000D3B3B /* Products */,
+				FF31FE11269D54E3009890FF /* Frameworks */,
+				54944F9F93E2AF74145DC29E /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		FFDAC8AD2674B502000D3B3B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FFDAC8AC2674B502000D3B3B /* Husb.app */,
+				FFDAC8C52674B505000D3B3B /* HusbTests.xctest */,
+				FFDAC8D02674B505000D3B3B /* HusbUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FFDAC8AE2674B502000D3B3B /* Husb */ = {
+			isa = PBXGroup;
+			children = (
+				FF31FE10269D54A5009890FF /* Husb.entitlements */,
+				FFDAC8F02674B745000D3B3B /* Application */,
+				FFDAC8ED2674B661000D3B3B /* Controller */,
+				FFDAC8F72674B7BB000D3B3B /* Domain */,
+				FFDAC8EB2674B65B000D3B3B /* Model */,
+				FFDAC8EE2674B72A000D3B3B /* Resource */,
+				FFDAC8EF2674B72D000D3B3B /* Utils */,
+			);
+			path = Husb;
+			sourceTree = "<group>";
+		};
+		FFDAC8C82674B505000D3B3B /* HusbTests */ = {
+			isa = PBXGroup;
+			children = (
+				FFDAC8C92674B505000D3B3B /* HusbTests.swift */,
+				FFDAC8CB2674B505000D3B3B /* Info.plist */,
+			);
+			path = HusbTests;
+			sourceTree = "<group>";
+		};
+		FFDAC8D32674B505000D3B3B /* HusbUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FFDAC8D42674B505000D3B3B /* HusbUITests.swift */,
+				FFDAC8D62674B505000D3B3B /* Info.plist */,
+			);
+			path = HusbUITests;
+			sourceTree = "<group>";
+		};
+		FFDAC8EB2674B65B000D3B3B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FF31FE0B269CBB82009890FF /* UserDefaults */,
+				FF2166382687172A00F0F26F /* RemoteStorage */,
+				FF2166352687100700F0F26F /* PersistenceStorage */,
+				FFDAC8B82674B502000D3B3B /* Husb.xcdatamodeld */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FFDAC8ED2674B661000D3B3B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FFDAC9692674C02C000D3B3B /* AppFlow */,
+				FF2166322686FDED00F0F26F /* AuthenticationFlow */,
+				FFDAC96B2674C03D000D3B3B /* CalendarFlow */,
+				FFDAC96A2674C036000D3B3B /* ChallengeFlow */,
+				FFDAC9612674BFDF000D3B3B /* ExploreFlow */,
+				FFDAC96D2674C04F000D3B3B /* ProfileFlow */,
+				FFDAC96C2674C046000D3B3B /* NotificationFlow */,
+				FFDAC9632674C007000D3B3B /* OnBoardingFlow */,
+				FF31FDB326962759009890FF /* CustomViews */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		FFDAC8EE2674B72A000D3B3B /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				FFC4546426A334210094FDA8 /* Lottie */,
+				FFDAC8BB2674B505000D3B3B /* Assets.xcassets */,
+				FFDAC8BD2674B505000D3B3B /* LaunchScreen.storyboard */,
+				FFDAC8C02674B505000D3B3B /* Info.plist */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		FFDAC8EF2674B72D000D3B3B /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				FFDAC9A22674CE49000D3B3B /* Extension */,
+				FF31FDB826962A19009890FF /* Helpers */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		FFDAC8F02674B745000D3B3B /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				FFDAC8AF2674B502000D3B3B /* AppDelegate.swift */,
+				FFDAC8B12674B502000D3B3B /* SceneDelegate.swift */,
+				FFDAC9302674BC4E000D3B3B /* DIContainer */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		FFDAC8F72674B7BB000D3B3B /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				FFDAC9752674C3D8000D3B3B /* Entity */,
+				FFDAC9742674C3D4000D3B3B /* UseCase */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		FFDAC9302674BC4E000D3B3B /* DIContainer */ = {
+			isa = PBXGroup;
+			children = (
+				FFDAC9772674C458000D3B3B /* UseCaseFactory */,
+				FFDAC92B2674BAC7000D3B3B /* AppDIContainer.swift */,
+				FF21663326870C4500F0F26F /* AppDIContainer+ViewControllerRoute.swift */,
+			);
+			path = DIContainer;
+			sourceTree = "<group>";
+		};
+		FFDAC9612674BFDF000D3B3B /* ExploreFlow */ = {
+			isa = PBXGroup;
+			children = (
+				FFA978DE267F73BB00CBB59C /* DashboardUI */,
+				FFEC88AA268F9F0400B8617B /* SearchUI */,
+			);
+			path = ExploreFlow;
+			sourceTree = "<group>";
+		};
+		FFDAC9632674C007000D3B3B /* OnBoardingFlow */ = {
+			isa = PBXGroup;
+			children = (
+				FF31FDFF269CA8AC009890FF /* ViewControllers */,
+				FFDAC8FE2674B918000D3B3B /* OnBoardingViewController.swift */,
+			);
+			path = OnBoardingFlow;
+			sourceTree = "<group>";
+		};
+		FFDAC9672674C00E000D3B3B /* SignInUI */ = {
+			isa = PBXGroup;
+			children = (
+				FFDAC9032674B91F000D3B3B /* SignInViewController.swift */,
+			);
+			path = SignInUI;
+			sourceTree = "<group>";
+		};
+		FFDAC9682674C021000D3B3B /* SignUpUI */ = {
+			isa = PBXGroup;
+			children = (
+				FFDAC9082674B928000D3B3B /* SignUpViewController.swift */,
+			);
+			path = SignUpUI;
+			sourceTree = "<group>";
+		};
+		FFDAC9692674C02C000D3B3B /* AppFlow */ = {
+			isa = PBXGroup;
+			children = (
+				FFDAC90D2674B969000D3B3B /* LaunchPadViewController.swift */,
+			);
+			path = AppFlow;
+			sourceTree = "<group>";
+		};
+		FFDAC96A2674C036000D3B3B /* ChallengeFlow */ = {
+			isa = PBXGroup;
+			children = (
+				FF21663926871D5600F0F26F /* ChallengeListUI */,
+				FFA978DD267F73B100CBB59C /* DashboardUI */,
+				FFA978E1267F73F200CBB59C /* DetailUI */,
+			);
+			path = ChallengeFlow;
+			sourceTree = "<group>";
+		};
+		FFDAC96B2674C03D000D3B3B /* CalendarFlow */ = {
+			isa = PBXGroup;
+			children = (
+				FFA978DC267F73A900CBB59C /* DashboardUI */,
+			);
+			path = CalendarFlow;
+			sourceTree = "<group>";
+		};
+		FFDAC96C2674C046000D3B3B /* NotificationFlow */ = {
+			isa = PBXGroup;
+			children = (
+				FF31FDB726962901009890FF /* DashboardUI */,
+				FF31FDEE269ADAD6009890FF /* ChallengeRequestUI */,
+				FF31FDE5269A4967009890FF /* MessageFromWifeUI */,
+			);
+			path = NotificationFlow;
+			sourceTree = "<group>";
+		};
+		FFDAC96D2674C04F000D3B3B /* ProfileFlow */ = {
+			isa = PBXGroup;
+			children = (
+				FFC4546126A1C9ED0094FDA8 /* ConnectProfileUI */,
+				FFA978E0267F73D900CBB59C /* DashboardUI */,
+			);
+			path = ProfileFlow;
+			sourceTree = "<group>";
+		};
+		FFDAC9742674C3D4000D3B3B /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				FF31FE2D269DC8BB009890FF /* User */,
+				FF31FE1F269D7AB1009890FF /* Challenge */,
+				FF31FE0A269CBB17009890FF /* OnBoarding */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		FFDAC9752674C3D8000D3B3B /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				FF2166262686F11600F0F26F /* ChallengeDomain.swift */,
+				FF2166282686F19300F0F26F /* ChallengeCategoryDomain.swift */,
+				FF21662A2686F1A800F0F26F /* MoodDomain.swift */,
+				FF21662C2686F1B700F0F26F /* TipsDomain.swift */,
+				FF21662E2686F21500F0F26F /* LoveLanguageDomain.swift */,
+				FF2166302686F81300F0F26F /* RoleDomain.swift */,
+				FF216643268784BD00F0F26F /* ChallengeStepDomain.swift */,
+				FFEC88A6268F900E00B8617B /* FunFactDomain.swift */,
+				FF31FDE8269A4E4E009890FF /* NotificationDomain.swift */,
+				FF31FDEA269A4FA3009890FF /* UserDomain.swift */,
+				FF31FDEC269A4FD0009890FF /* MessageDomain.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		FFDAC9772674C458000D3B3B /* UseCaseFactory */ = {
+			isa = PBXGroup;
+			children = (
+				FFDAC98D2674C4CE000D3B3B /* UseCaseFactory.swift */,
+				FFDAC9922674C4D8000D3B3B /* AppDIContainer+UseCaseFactory.swift */,
+			);
+			path = UseCaseFactory;
+			sourceTree = "<group>";
+		};
+		FFDAC9A22674CE49000D3B3B /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				FFEC88A8268F93EE00B8617B /* UIView.swift */,
+				FFDAC9A32674CE4F000D3B3B /* UIImage.swift */,
+				FFDAC9AB2674D0E2000D3B3B /* UIColor.swift */,
+				FF2166452687926F00F0F26F /* UIViewController.swift */,
+				FF31FDBF26963C2F009890FF /* Date.swift */,
+				FF31FE06269CB5A4009890FF /* Array.swift */,
+				FFC45449269F710E0094FDA8 /* String.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		FFEC88AA268F9F0400B8617B /* SearchUI */ = {
+			isa = PBXGroup;
+			children = (
+				FFEC88B2269062E800B8617B /* ExploreSearchViewController.swift */,
+			);
+			path = SearchUI;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FFDAC8AB2674B502000D3B3B /* Husb */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FFDAC8D92674B505000D3B3B /* Build configuration list for PBXNativeTarget "Husb" */;
+			buildPhases = (
+				B98EB0E95F122A71AAE7ABEE /* [CP] Check Pods Manifest.lock */,
+				FFDAC8A82674B502000D3B3B /* Sources */,
+				FFDAC8A92674B502000D3B3B /* Frameworks */,
+				FFDAC8AA2674B502000D3B3B /* Resources */,
+				FFEC88B12690617400B8617B /* Embed Frameworks */,
+				29E94C0BC32F2F23887882ED /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Husb;
+			packageProductDependencies = (
+				FFDAC9BA2674E068000D3B3B /* SnapKit */,
+				FFEC88AE2690617400B8617B /* Hero */,
+				FF31FDAD269626BE009890FF /* KDCalendar */,
+				FF31FDB026962724009890FF /* SwiftMessages */,
+				FFC4544C269F88210094FDA8 /* CryptoSwift */,
+				FF9A5B5426A5E04A00D697D4 /* SkeletonView */,
+				FF9A5B5726A6B32E00D697D4 /* Reachability */,
+			);
+			productName = Husb;
+			productReference = FFDAC8AC2674B502000D3B3B /* Husb.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FFDAC8C42674B505000D3B3B /* HusbTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FFDAC8DC2674B505000D3B3B /* Build configuration list for PBXNativeTarget "HusbTests" */;
+			buildPhases = (
+				80113AA5A89FB99AF37A5817 /* [CP] Check Pods Manifest.lock */,
+				FFDAC8C12674B505000D3B3B /* Sources */,
+				FFDAC8C22674B505000D3B3B /* Frameworks */,
+				FFDAC8C32674B505000D3B3B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FFDAC8C72674B505000D3B3B /* PBXTargetDependency */,
+			);
+			name = HusbTests;
+			productName = HusbTests;
+			productReference = FFDAC8C52674B505000D3B3B /* HusbTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FFDAC8CF2674B505000D3B3B /* HusbUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FFDAC8DF2674B505000D3B3B /* Build configuration list for PBXNativeTarget "HusbUITests" */;
+			buildPhases = (
+				B8520250578B9F02F4A38A6A /* [CP] Check Pods Manifest.lock */,
+				FFDAC8CC2674B505000D3B3B /* Sources */,
+				FFDAC8CD2674B505000D3B3B /* Frameworks */,
+				FFDAC8CE2674B505000D3B3B /* Resources */,
+				2798567FAC0FAFCC6B7A9F13 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FFDAC8D22674B505000D3B3B /* PBXTargetDependency */,
+			);
+			name = HusbUITests;
+			productName = HusbUITests;
+			productReference = FFDAC8D02674B505000D3B3B /* HusbUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FFDAC8A42674B502000D3B3B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					FFDAC8AB2674B502000D3B3B = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					FFDAC8C42674B505000D3B3B = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = FFDAC8AB2674B502000D3B3B;
+					};
+					FFDAC8CF2674B505000D3B3B = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = FFDAC8AB2674B502000D3B3B;
+					};
+				};
+			};
+			buildConfigurationList = FFDAC8A72674B502000D3B3B /* Build configuration list for PBXProject "Husb" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FFDAC8A32674B502000D3B3B;
+			packageReferences = (
+				FFDAC9B92674E068000D3B3B /* XCRemoteSwiftPackageReference "SnapKit" */,
+				FFEC88AD2690617400B8617B /* XCRemoteSwiftPackageReference "Hero" */,
+				FF31FDAC269626BE009890FF /* XCRemoteSwiftPackageReference "CalendarView" */,
+				FF31FDAF26962724009890FF /* XCRemoteSwiftPackageReference "SwiftMessages" */,
+				FFC4544B269F88200094FDA8 /* XCRemoteSwiftPackageReference "CryptoSwift" */,
+				FF9A5B5326A5E04A00D697D4 /* XCRemoteSwiftPackageReference "SkeletonView" */,
+				FF9A5B5626A6B32E00D697D4 /* XCRemoteSwiftPackageReference "Reachability" */,
+			);
+			productRefGroup = FFDAC8AD2674B502000D3B3B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FFDAC8AB2674B502000D3B3B /* Husb */,
+				FFDAC8C42674B505000D3B3B /* HusbTests */,
+				FFDAC8CF2674B505000D3B3B /* HusbUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FFDAC8AA2674B502000D3B3B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFC4546826A335120094FDA8 /* loading-animation.json in Resources */,
+				FFDAC8BF2674B505000D3B3B /* LaunchScreen.storyboard in Resources */,
+				FFDAC8BC2674B505000D3B3B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FFDAC8C32674B505000D3B3B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FFDAC8CE2674B505000D3B3B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2798567FAC0FAFCC6B7A9F13 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Husb-HusbUITests/Pods-Husb-HusbUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Husb-HusbUITests/Pods-Husb-HusbUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Husb-HusbUITests/Pods-Husb-HusbUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		29E94C0BC32F2F23887882ED /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Husb/Pods-Husb-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Husb/Pods-Husb-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Husb/Pods-Husb-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		80113AA5A89FB99AF37A5817 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HusbTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B8520250578B9F02F4A38A6A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Husb-HusbUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B98EB0E95F122A71AAE7ABEE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Husb-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FFDAC8A82674B502000D3B3B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF31FDED269A4FD0009890FF /* MessageDomain.swift in Sources */,
+				FFDAC91D2674B9BE000D3B3B /* DashboardCalendarViewController.swift in Sources */,
+				FFA978F02680825800CBB59C /* DetailChallengeCollectionHeaderView.swift in Sources */,
+				FFDAC9A42674CE4F000D3B3B /* UIImage.swift in Sources */,
+				FFEC88A9268F93EE00B8617B /* UIView.swift in Sources */,
+				FFDACA0026766855000D3B3B /* ChallengeCategoryCollectionCell.swift in Sources */,
+				FF31FE0D269CBBA0009890FF /* UserDefaultStorage.swift in Sources */,
+				FF31FE09269CBA54009890FF /* SaveOnBoardingStateUseCase.swift in Sources */,
+				FF31FDDE26999A71009890FF /* ImageViewerMessageView.swift in Sources */,
+				FF21662F2686F21500F0F26F /* LoveLanguageDomain.swift in Sources */,
+				FFDAC9E12675D22E000D3B3B /* TipsCollectionCell.swift in Sources */,
+				FF31FE35269E34CF009890FF /* ValidateIsUserSignedInUseCase.swift in Sources */,
+				FFC4544A269F710E0094FDA8 /* String.swift in Sources */,
+				FF31FE15269D5530009890FF /* RemoteService.swift in Sources */,
+				FF31FE07269CB5A4009890FF /* Array.swift in Sources */,
+				FF31FDE7269A497C009890FF /* MessageFromWifeNotificationViewController.swift in Sources */,
+				FF21663C26871D8F00F0F26F /* ChallengeListViewController.swift in Sources */,
+				FF2166292686F19300F0F26F /* ChallengeCategoryDomain.swift in Sources */,
+				FF31FDF6269B55D4009890FF /* ProfileInfoTableCell.swift in Sources */,
+				FF2166272686F11600F0F26F /* ChallengeDomain.swift in Sources */,
+				FF31FDD426995DF5009890FF /* UncompletedChallengeCollectionCell.swift in Sources */,
+				FF31FE33269E0BD7009890FF /* FetchUserUseCase.swift in Sources */,
+				FFDAC9222674B9C9000D3B3B /* DashboardNotificationViewController.swift in Sources */,
+				FFDAC9092674B928000D3B3B /* SignUpViewController.swift in Sources */,
+				FF31FE23269D84C4009890FF /* SaveUserChallengeUseCase.swift in Sources */,
+				FFEC88B3269062E800B8617B /* ExploreSearchViewController.swift in Sources */,
+				FF31FDC226963EDA009890FF /* CompletedChallengeMessageView.swift in Sources */,
+				FF216640268746CD00F0F26F /* DetailChallengeStepCollectionCell.swift in Sources */,
+				FF4968D72677847900153484 /* LoveLanguageCollectionCell.swift in Sources */,
+				FFC45451269FA5010094FDA8 /* LoadingMessageView.swift in Sources */,
+				FF31FE1C269D5ED3009890FF /* ChallengeStep.swift in Sources */,
+				FFDAC8B02674B502000D3B3B /* AppDelegate.swift in Sources */,
+				FF31FDE4269A3FB3009890FF /* NotificationCollectionCell.swift in Sources */,
+				FFDAC9AC2674D0E2000D3B3B /* UIColor.swift in Sources */,
+				FF4968D926778F2400153484 /* ExploreCollectionHeaderView.swift in Sources */,
+				FF31FE1A269D5DEC009890FF /* Challenge.swift in Sources */,
+				FFDAC9932674C4D8000D3B3B /* AppDIContainer+UseCaseFactory.swift in Sources */,
+				FFA978E8267F77DE00CBB59C /* ChallengeCategoryCollectionView.swift in Sources */,
+				FFDAC9132674B9B2000D3B3B /* DashboardChallengeViewController.swift in Sources */,
+				FF31FDE22699CB45009890FF /* NotificationCollectionHeaderView.swift in Sources */,
+				FFC4544F269F8B4A0094FDA8 /* Auth.swift in Sources */,
+				FF31FDD02698A97E009890FF /* CalendarDateCollectionCell.swift in Sources */,
+				FF216644268784BD00F0F26F /* ChallengeStepDomain.swift in Sources */,
+				FF31FDD626995E03009890FF /* CompletedChallengeCollectionCell.swift in Sources */,
+				FF2166372687102C00F0F26F /* PersistenceService.swift in Sources */,
+				FFDAC9C02674E2EC000D3B3B /* CurrentChallengeCollectionCell.swift in Sources */,
+				FFC4546A26A478AC0094FDA8 /* EmptyCollectionViewCell.swift in Sources */,
+				FFEC88B62690AAD700B8617B /* ChallengeListCollectionView.swift in Sources */,
+				FF31FE01269CA8CC009890FF /* FirstOnBoardingViewController.swift in Sources */,
+				FF31FDC026963C2F009890FF /* Date.swift in Sources */,
+				FF31FDCC2697824F009890FF /* ConnectWithPartnerMessageView.swift in Sources */,
+				FF31FDBE26962F83009890FF /* DatePickerMessageView.swift in Sources */,
+				FFA978E6267F75EA00CBB59C /* DetailChallengeCollectionView.swift in Sources */,
+				FFDAC9B52674DB8F000D3B3B /* DashboardChallengeCollectionView.swift in Sources */,
+				FFDAC9C526752A7E000D3B3B /* SectionHeaderView.swift in Sources */,
+				FFC45453269FA52C0094FDA8 /* QRCodeMessageView.swift in Sources */,
+				FFDAC9CA26754133000D3B3B /* SimpleThingsCollectionCell.swift in Sources */,
+				FF31FDE02699CA3F009890FF /* DashboardNotificationCollectionView.swift in Sources */,
+				FF31FE0F269CBE25009890FF /* FetchOnBoardingStateUseCase.swift in Sources */,
+				FF31FDE9269A4E4E009890FF /* NotificationDomain.swift in Sources */,
+				FF31FE2F269E0BB2009890FF /* SaveUserUseCase.swift in Sources */,
+				FF4968D42677439F00153484 /* ExploreCollectionView.swift in Sources */,
+				FF2166462687926F00F0F26F /* UIViewController.swift in Sources */,
+				FFDAC8B22674B502000D3B3B /* SceneDelegate.swift in Sources */,
+				FFEC88A7268F900E00B8617B /* FunFactDomain.swift in Sources */,
+				FF31FDCA26977B1D009890FF /* CalendarDateCollectionView.swift in Sources */,
+				FFC4546026A05A6A0094FDA8 /* ScanQRCodeMessageView.swift in Sources */,
+				FF31FDD22698B8F6009890FF /* CalendarChallengeCollectionView.swift in Sources */,
+				FFDAC8BA2674B502000D3B3B /* Husb.xcdatamodeld in Sources */,
+				FF31FDF2269B531E009890FF /* DashboardProfileTableView.swift in Sources */,
+				FFC4546326A1CA0B0094FDA8 /* ConnectProfileViewController.swift in Sources */,
+				FF21662B2686F1A800F0F26F /* MoodDomain.swift in Sources */,
+				FF31FE18269D5990009890FF /* User.swift in Sources */,
+				FF21663E268740D000F0F26F /* DetailChallengeDescriptionCollectionCell.swift in Sources */,
+				FFDAC9182674B9B8000D3B3B /* DashboardExploreViewController.swift in Sources */,
+				FFDAC9042674B91F000D3B3B /* SignInViewController.swift in Sources */,
+				FF31FE03269CABA2009890FF /* SecondOnBoardingViewController.swift in Sources */,
+				FF2166312686F81300F0F26F /* RoleDomain.swift in Sources */,
+				FFA978EC267F797E00CBB59C /* DetailChallengeActionCollectionCell.swift in Sources */,
+				FFDAC9CF26754425000D3B3B /* WifeMoodCollectionCell.swift in Sources */,
+				FFDAC92C2674BAC7000D3B3B /* AppDIContainer.swift in Sources */,
+				FF21663426870C4500F0F26F /* AppDIContainer+ViewControllerRoute.swift in Sources */,
+				FFDAC9272674B9D1000D3B3B /* DashboardProfileViewController.swift in Sources */,
+				FFDAC98E2674C4CE000D3B3B /* UseCaseFactory.swift in Sources */,
+				FFDAC9D92675D21A000D3B3B /* DefaultChallengeCollectionCell.swift in Sources */,
+				FFDAC8FF2674B918000D3B3B /* OnBoardingViewController.swift in Sources */,
+				FF31FE1E269D67D3009890FF /* FunFact.swift in Sources */,
+				FF31FE21269D7AD1009890FF /* FetchUserChallengesUseCase.swift in Sources */,
+				FF31FDEB269A4FA3009890FF /* UserDomain.swift in Sources */,
+				FF21662D2686F1B700F0F26F /* TipsDomain.swift in Sources */,
+				FF31FDBA26962A30009890FF /* MessageKit.swift in Sources */,
+				FFDAC90E2674B969000D3B3B /* LaunchPadViewController.swift in Sources */,
+				FF31FDF0269ADC7D009890FF /* ChallengeRequestNotificationViewController.swift in Sources */,
+				FF31FE05269CABAB009890FF /* ThirdOnBoardingViewController.swift in Sources */,
+				FF216642268748B100F0F26F /* DetailChallengeFunFactCollectionCell.swift in Sources */,
+				FFA978E3267F740F00CBB59C /* DetailChallengeViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FFDAC8C12674B505000D3B3B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFDAC8CA2674B505000D3B3B /* HusbTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FFDAC8CC2674B505000D3B3B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFDAC8D52674B505000D3B3B /* HusbUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FFDAC8C72674B505000D3B3B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FFDAC8AB2674B502000D3B3B /* Husb */;
+			targetProxy = FFDAC8C62674B505000D3B3B /* PBXContainerItemProxy */;
+		};
+		FFDAC8D22674B505000D3B3B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FFDAC8AB2674B502000D3B3B /* Husb */;
+			targetProxy = FFDAC8D12674B505000D3B3B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FFDAC8BD2674B505000D3B3B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FFDAC8BE2674B505000D3B3B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FFDAC8D72674B505000D3B3B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FFDAC8D82674B505000D3B3B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FFDAC8DA2674B505000D3B3B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D67F4410A9FADDD10F18974B /* Pods-Husb.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Husb/Husb.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8MV3PNW544;
+				INFOPLIST_FILE = Husb/Resource/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mnobelsh.Husb-Thesis";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		FFDAC8DB2674B505000D3B3B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1D3DD4878740A9C9CDB7076C /* Pods-Husb.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Husb/Husb.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8MV3PNW544;
+				INFOPLIST_FILE = Husb/Resource/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mnobelsh.Husb-Thesis";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		FFDAC8DD2674B505000D3B3B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 42B686044D3C1A4D2D5E602A /* Pods-HusbTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8MV3PNW544;
+				INFOPLIST_FILE = HusbTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mnobelsh.HusbTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Husb.app/Husb";
+			};
+			name = Debug;
+		};
+		FFDAC8DE2674B505000D3B3B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F5A5801EA651C2F04F42091 /* Pods-HusbTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8MV3PNW544;
+				INFOPLIST_FILE = HusbTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mnobelsh.HusbTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Husb.app/Husb";
+			};
+			name = Release;
+		};
+		FFDAC8E02674B505000D3B3B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6E3D3CC9D12F1A700F585CBD /* Pods-Husb-HusbUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8MV3PNW544;
+				INFOPLIST_FILE = HusbUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mnobelsh.HusbUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Husb;
+			};
+			name = Debug;
+		};
+		FFDAC8E12674B505000D3B3B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 325CCC6EC9FEFEE09F30DBA9 /* Pods-Husb-HusbUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8MV3PNW544;
+				INFOPLIST_FILE = HusbUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mnobelsh.HusbUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Husb;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FFDAC8A72674B502000D3B3B /* Build configuration list for PBXProject "Husb" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FFDAC8D72674B505000D3B3B /* Debug */,
+				FFDAC8D82674B505000D3B3B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FFDAC8D92674B505000D3B3B /* Build configuration list for PBXNativeTarget "Husb" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FFDAC8DA2674B505000D3B3B /* Debug */,
+				FFDAC8DB2674B505000D3B3B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FFDAC8DC2674B505000D3B3B /* Build configuration list for PBXNativeTarget "HusbTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FFDAC8DD2674B505000D3B3B /* Debug */,
+				FFDAC8DE2674B505000D3B3B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FFDAC8DF2674B505000D3B3B /* Build configuration list for PBXNativeTarget "HusbUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FFDAC8E02674B505000D3B3B /* Debug */,
+				FFDAC8E12674B505000D3B3B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FF31FDAC269626BE009890FF /* XCRemoteSwiftPackageReference "CalendarView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mmick66/CalendarView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.8.9;
+			};
+		};
+		FF31FDAF26962724009890FF /* XCRemoteSwiftPackageReference "SwiftMessages" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftKickMobile/SwiftMessages";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.3;
+			};
+		};
+		FF9A5B5326A5E04A00D697D4 /* XCRemoteSwiftPackageReference "SkeletonView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Juanpe/SkeletonView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.21.1;
+			};
+		};
+		FF9A5B5626A6B32E00D697D4 /* XCRemoteSwiftPackageReference "Reachability" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ashleymills/Reachability.swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.0;
+			};
+		};
+		FFC4544B269F88200094FDA8 /* XCRemoteSwiftPackageReference "CryptoSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/krzyzanowskim/CryptoSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.4.1;
+			};
+		};
+		FFDAC9B92674E068000D3B3B /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+		FFEC88AD2690617400B8617B /* XCRemoteSwiftPackageReference "Hero" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/HeroTransitions/Hero.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.6.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FF31FDAD269626BE009890FF /* KDCalendar */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FF31FDAC269626BE009890FF /* XCRemoteSwiftPackageReference "CalendarView" */;
+			productName = KDCalendar;
+		};
+		FF31FDB026962724009890FF /* SwiftMessages */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FF31FDAF26962724009890FF /* XCRemoteSwiftPackageReference "SwiftMessages" */;
+			productName = SwiftMessages;
+		};
+		FF9A5B5426A5E04A00D697D4 /* SkeletonView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FF9A5B5326A5E04A00D697D4 /* XCRemoteSwiftPackageReference "SkeletonView" */;
+			productName = SkeletonView;
+		};
+		FF9A5B5726A6B32E00D697D4 /* Reachability */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FF9A5B5626A6B32E00D697D4 /* XCRemoteSwiftPackageReference "Reachability" */;
+			productName = Reachability;
+		};
+		FFC4544C269F88210094FDA8 /* CryptoSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FFC4544B269F88200094FDA8 /* XCRemoteSwiftPackageReference "CryptoSwift" */;
+			productName = CryptoSwift;
+		};
+		FFDAC9BA2674E068000D3B3B /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FFDAC9B92674E068000D3B3B /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		FFEC88AE2690617400B8617B /* Hero */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FFEC88AD2690617400B8617B /* XCRemoteSwiftPackageReference "Hero" */;
+			productName = Hero;
+		};
+/* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		FFDAC8B82674B502000D3B3B /* Husb.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FFDAC8B92674B502000D3B3B /* Husb.xcdatamodel */,
+			);
+			currentVersion = FFDAC8B92674B502000D3B3B /* Husb.xcdatamodel */;
+			path = Husb.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = FFDAC8A42674B502000D3B3B /* Project object */;
+}
