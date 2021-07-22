@@ -10,6 +10,15 @@ import Hero
 
 
 extension AppDIContainer: ViewControllerRoute {
+    
+    func showCompletedChallengeNotificationUI(
+        navigationController: UINavigationController?,
+        request: CompletedChallengeNotificationViewControllerRequest
+    ) {
+        let viewController = CompletedChallengeNotificationViewController.create(route: self, request: request, useCase: self)
+        navigationController?.hero.navigationAnimationType = .selectBy(presenting: .slide(direction: .left), dismissing: .slide(direction: .right))
+        navigationController?.pushViewController(viewController, animated: true)
+    }
 
     func showDashboardProfileUI(
         navigationController: UINavigationController?,
@@ -63,7 +72,8 @@ extension AppDIContainer: ViewControllerRoute {
     ) {
         let viewController = ChallengeRequestNotificationViewController.create(
             route: self,
-            request: request
+            request: request,
+            useCase: self
         )
         navigationController?.hero.navigationAnimationType = .selectBy(presenting: .slide(direction: .left), dismissing: .slide(direction: .right))
         navigationController?.pushViewController(viewController, animated: true)
@@ -151,7 +161,7 @@ extension AppDIContainer: ViewControllerRoute {
     }
     
     func makeNotificationFlow() -> UINavigationController {
-        let viewController = DashboardNotificationViewController.create(route: self, request: .init())
+        let viewController = DashboardNotificationViewController.create(route: self, request: .init(), useCase: self)
         let navigationController = UINavigationController(rootViewController: viewController)
         navigationController.navigationBar.isHidden = true
         navigationController.view.backgroundColor = .clear

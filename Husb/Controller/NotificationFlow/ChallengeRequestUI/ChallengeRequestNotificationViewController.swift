@@ -20,16 +20,19 @@ class ChallengeRequestNotificationViewController: UIViewController {
 
     static func create(
         route: ChallengeRequestNotificationViewControllerRoute,
-        request: ChallengeRequestNotificationViewControllerRequest
+        request: ChallengeRequestNotificationViewControllerRequest,
+        useCase: UseCaseFactory
     ) -> ChallengeRequestNotificationViewController {
         let viewController = ChallengeRequestNotificationViewController()
         viewController.route = route
         viewController.request = request
+        viewController.useCase = useCase
         return viewController
     }
     
     private var route: ChallengeRequestNotificationViewControllerRoute!
     private var request: ChallengeRequestNotificationViewControllerRequest!
+    private var useCase: UseCaseFactory!
     
     // MARK: - SubViews
     lazy var contentContainerView: UIView = {
@@ -219,11 +222,25 @@ private extension ChallengeRequestNotificationViewController {
         }
         self.view.heroID = "ChallengeRequestHero"
         self.descriptionLabel.text = "You’ve got a challenge!"
-        self.titleLabel.text = self.request.notification.challenge?.title
-        guard let challengeDueDate = self.request.notification.challenge?.dueDate else { return }
-        self.dueDateLabel.text = "Due Date: \(challengeDueDate.getString(withFormat: "d MMMM YYYY"))"
         self.dateLabel.text = self.request.notification.date.getString(withFormat: "EEEE,d MMMM YYYY")
         self.configureBackButton(with: .chevronLeft, backgroundColor: .romanticPink)
+        
+        MessageKit.showLoadingView()
+        guard let userId = UserDefaultStorage.shared.getValue(forKey: .currentUserId) as? String else { return }
+        self.useCase.fetchUserChallengesUseCase().execute(
+            .init(
+                userId: userId,
+                objective: .byChallengeId(self.request.notification.challengeId ?? "")
+            )) { result in
+            DispatchQueue.main.async {
+                guard let challenge = try? result.get().challenges.first else { return }
+                self.titleLabel.text = challenge.title
+                guard let challengeDueDate = challenge.dueDate else { return }
+                self.dueDateLabel.text = "Due Date: \(challengeDueDate.getString(withFormat: "d MMMM YYYY"))"
+                MessageKit.hideLoadingView()
+            }
+            
+        }
     }
     
     @objc

@@ -121,6 +121,27 @@ class MessageKit {
         SwiftMessages.show(config: config, view: view)
     }
     
+    static func showMoodPickerView(
+        withId id: String = UUID().uuidString,
+        confirmAction: ((MoodDomain)->Void)? = nil
+    ) {
+        let view = MoodPickerView(frame: UIScreen.main.bounds)
+        view.id = id
+        view.confirmAction = confirmAction
+        view.snp.makeConstraints { make in
+            make.height.equalTo(180)
+        }
+        view.layoutMargins = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+        
+        var config = SwiftMessages.defaultConfig
+        config.dimMode = .gray(interactive: true)
+        config.duration = .forever
+        config.interactiveHide = true
+        config.presentationContext = .window(windowLevel: .normal)
+        config.presentationStyle = .center
+        SwiftMessages.show(config: config, view: view)
+    }
+    
     static func showSelectTodayFeelingView() {
         
     }
@@ -164,6 +185,51 @@ class MessageKit {
         config.presentationStyle = .center
         config.duration = duration
         config.presentationContext = .automatic
+        config.dimMode = .gray(interactive: true)
+        config.interactiveHide = true
+        SwiftMessages.show(config: config, view: view)
+    }
+    
+    static func showCreateCustomChallengeView(
+        withId id: String = UUID().uuidString,
+        confirmAction: ((_ challenge: ChallengeDomain) -> Void)? = nil
+    ) {
+        let view =  CreateCustomChallengeView(frame: UIScreen.main.bounds)
+        view.id = id
+        view.confirmAction = confirmAction
+        view.snp.makeConstraints { make in
+            make.height.equalTo(UIScreen.main.bounds.height*0.9)
+        }
+        var config = SwiftMessages.defaultConfig
+        config.duration = .forever
+        config.dimMode = .gray(interactive: true)
+        config.interactiveHide = true
+        config.presentationContext = .window(windowLevel: .normal)
+        config.presentationStyle = .bottom
+        SwiftMessages.show(config: config, view: view)
+    }
+    
+    enum AlertType {
+        case success
+        case failure
+    }
+    
+    static func showAlertMessageView(
+        withId id: String = UUID().uuidString,
+        title: String,
+        type: AlertType
+    ) {
+        let view = AlertMessageView()
+        view.id = id
+        view.fill(title: title, type: type)
+        view.snp.makeConstraints { make in
+            make.height.equalTo(160)
+        }
+        
+        var config = SwiftMessages.defaultConfig
+        config.presentationStyle = .center
+        config.duration = .seconds(seconds: 5)
+        config.presentationContext = .window(windowLevel: .normal)
         config.dimMode = .gray(interactive: true)
         config.interactiveHide = true
         SwiftMessages.show(config: config, view: view)

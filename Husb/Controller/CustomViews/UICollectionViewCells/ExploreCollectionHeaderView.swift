@@ -14,6 +14,11 @@ protocol ExploreCollectionHeaderViewDelegate: AnyObject {
         cell: ExploreCollectionHeaderView
     )
     
+    func exploreCollectionHeaderView(
+        _ view: ExploreCollectionHeaderView,
+        didCreateNewChallenge challenge: ChallengeDomain
+    )
+    
 }
 
 
@@ -80,6 +85,9 @@ class ExploreCollectionHeaderView: UICollectionViewCell {
         view.layer.cornerRadius = 20
         view.layer.maskedCorners = [.layerMinXMaxYCorner,.layerMaxXMaxYCorner]
         view.heroID = "HeaderContainerView"
+        view.isUserInteractionEnabled = true
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.onHeaderViewDidTap(_:)))
+        view.addGestureRecognizer(tapGesture)
         return view
     }()
 
@@ -114,6 +122,20 @@ private extension ExploreCollectionHeaderView {
         self.backgroundColor = .clear
         self.contentView.setNeedsLayout()
         self.contentView.layoutIfNeeded()
+    }
+    
+    @objc
+    func onHeaderViewDidTap(_ sender: UITapGestureRecognizer) {
+        let messageId = UUID().uuidString
+        let confirmAction = { (_ challenge: ChallengeDomain) in
+            MessageKit.hide(id: messageId)
+            guard let delegate = self.delegate else { return }
+            delegate.exploreCollectionHeaderView(self, didCreateNewChallenge: challenge)
+        }
+        MessageKit.showCreateCustomChallengeView(
+            withId: messageId,
+            confirmAction: confirmAction
+        )
     }
     
 }

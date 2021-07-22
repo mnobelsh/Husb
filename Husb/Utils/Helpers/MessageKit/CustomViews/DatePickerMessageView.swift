@@ -56,6 +56,7 @@ class DatePickerMessageView: MessageView {
         calendarView.multipleSelectionEnable = false
         calendarView.style = .Default
         calendarView.direction = .horizontal
+        calendarView.marksWeekends = false
         return calendarView
     }()
     lazy var doneButton: UIButton = {

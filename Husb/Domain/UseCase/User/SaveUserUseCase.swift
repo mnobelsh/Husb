@@ -57,7 +57,6 @@ extension DefaultSaveUserUseCase: SaveUserUseCase {
                     if let error = error {
                         completion(.failure(error))
                     } else {
-                        self.userDefaultStorage.setValue(request.user.id, forKey: .currentUserId)
                         completion(.success(.init(user: request.user)))
                     }
                 }

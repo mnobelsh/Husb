@@ -58,6 +58,7 @@ class DashboardExploreViewController: UIViewController {
     private var forYouAndSoulmateChallenges = ChallengeDomain.allChallenges
     private var mostSavedChallenges = ChallengeDomain.allChallenges
     private var hubbyChallenges = ChallengeDomain.allChallenges
+    private var currentUser: UserDomain?
 
     // MARK: - SubViews
     private lazy var exploreCollectionView: ExploreCollectionView = ExploreCollectionView(frame: self.view.frame)
@@ -103,6 +104,14 @@ private extension DashboardExploreViewController {
         self.view.setNeedsLayout()
         self.view.layoutIfNeeded()
         self.activateTapViewEndEditingWithGesture()
+        
+        MessageKit.showLoadingView()
+        self.useCase.fetchUserUseCase().execute(.init(parameter: .current)) { result in
+            DispatchQueue.main.async {
+                self.currentUser = try? result.get().user
+                MessageKit.hideLoadingView()
+            }
+        }
     }
     
 
@@ -237,13 +246,50 @@ extension DashboardExploreViewController: UICollectionViewDelegate {
 
 // MARK: - DashboardExploreViewController+ExploreCollectionHeaderViewDelegate
 extension DashboardExploreViewController: ExploreCollectionHeaderViewDelegate {
-    
+
     func exploreCollectionSearchBarDidBeginEditing(
         _ searchBar: UISearchBar,
         cell: ExploreCollectionHeaderView
     ) {
         self.route.showExploreSearchUI(navigationController: self.navigationController, request: .init())
     }
+    
+    
+    func exploreCollectionHeaderView(
+        _ view: ExploreCollectionHeaderView,
+        didCreateNewChallenge challenge: ChallengeDomain
+    ) {
+        guard let currentUser = self.currentUser else { return }
+        MessageKit.showLoadingView()
+        let request = SaveUserChallengeUseCaseRequest(
+            currentUserId: currentUser.id,
+            connectedUserId: currentUser.connectedUserId,
+            challenge: challenge
+        )
+        self.useCase.saveUserChallengeUseCase().execute(request) { result in
+            DispatchQueue.main.async {
+                MessageKit.hideLoadingView()
+                switch result {
+                case .success:
+                    MessageKit.showAlertMessageView(title: "New challenge has been added.", type: .success)
+                    guard let currentUserId = self.currentUser?.id, let connectedUserId = self.currentUser?.connectedUserId else { return }
+                    let notification = NotificationDomain(
+                        notificationType: .challengeRequest,
+                        title: "You got new challenge",
+                        message: "new challenge have been added to your current challenge.",
+                        challengeId: challenge.id,
+                        date: Date(),
+                        senderId: currentUserId,
+                        receiverId: connectedUserId
+                    )
+                    self.useCase.saveNotificationUseCase().execute(SaveNotificationUseCaseRequest(notification: notification)) { _ in }
+                case .failure:
+                    MessageKit.showAlertMessageView(title: "Failed to create new challenge.", type: .failure)
+                }
+            }
+        }
+    }
+    
     
 }
 

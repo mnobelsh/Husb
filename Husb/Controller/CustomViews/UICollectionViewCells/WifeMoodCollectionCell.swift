@@ -15,10 +15,10 @@ class WifeMoodCollectionCell: UICollectionViewCell {
     private lazy var descriptionLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 20)
+        label.adjustsFontSizeToFitWidth = true
         label.textColor = .darkGray
-        label.minimumScaleFactor = 0.5
+        label.minimumScaleFactor = 0.6
         label.numberOfLines = 0
-        label.lineBreakMode = .byWordWrapping
         label.isSkeletonable = true
         return label
     }()
@@ -50,7 +50,7 @@ class WifeMoodCollectionCell: UICollectionViewCell {
             make.width.equalTo(self.moodImageView.snp.height)
         }
         self.descriptionLabel.snp.makeConstraints { make in
-            make.leading.top.bottom.equalToSuperview().inset(25)
+            make.leading.top.bottom.equalToSuperview().inset(20)
             make.trailing.equalTo(self.moodImageView.snp.leading).offset(-20)
         }
     
@@ -65,7 +65,7 @@ class WifeMoodCollectionCell: UICollectionViewCell {
     }
     
     
-    func fill(mood: MoodDomain) {
+    func fill(mood: MoodDomain, role: RoleDomain.RoleType) {
         self.descriptionLabel.text = mood.description
         switch mood.type {
         case .happy:
@@ -81,6 +81,17 @@ class WifeMoodCollectionCell: UICollectionViewCell {
         case .excited:
             self.moodImageView.image = .moodExcited
         }
+        switch role {
+        case .wife:
+            self.descriptionLabel.text = "You're feeling \(mood.title), Tap to update your current feelings with your husband."
+            break
+        default:
+            break
+        }
+    }
+    
+    func fill(description: String) {
+        self.descriptionLabel.text = description
     }
     
 }

@@ -64,10 +64,6 @@ class ScanQRCodeMessageView: MessageView {
             captureSession.stopRunning()
         }
     }
-
-    func found(code: String) {
-        print("[DEBUGS]", code)
-    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)

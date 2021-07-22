@@ -137,7 +137,6 @@ private extension DetailChallengeViewController {
             guard let currentUser = (try? result.get())?.user else { return }
             DispatchQueue.main.async {
                 self.currentUser = currentUser
-               
             }
         }
     }
@@ -158,9 +157,9 @@ private extension DetailChallengeViewController {
                         self.challenge = self.request.challenge
                     }
                     MessageKit.hideLoadingView()
-                case .failure(let error):
-                    print("[DEBUGS] ERROR \(error)")
+                case .failure:
                     MessageKit.hideLoadingView()
+                    MessageKit.showAlertMessageView(title: "Unable to perform request, please check your internet connection.", type: .failure)
                 }
             }
         }
@@ -169,9 +168,24 @@ private extension DetailChallengeViewController {
     func saveChallenge(completion: @escaping(ChallengeDomain?) -> Void) {
         guard let currentUser = self.currentUser, let connectedUserId = currentUser.connectedUserId, let savedChallenge = self.challenge else { return }
         let request = SaveUserChallengeUseCaseRequest(
-            userIds: [currentUser.id, connectedUserId],
+            currentUserId: currentUser.id,
+            connectedUserId: connectedUserId,
             challenge: savedChallenge
         )
+        if savedChallenge.isCompleted, currentUser.role.type == .hubby {
+            let notification = NotificationDomain(
+                id: UUID().uuidString,
+                notificationType: .completedChallenge,
+                title: "Your husband has finished his challenge.",
+                message: "Write down your appreciation message for your husband.",
+                challengeId: savedChallenge.id,
+                date: Date(),
+                isRead: false,
+                senderId: currentUser.id,
+                receiverId: connectedUserId
+            )
+            self.useCase.saveNotificationUseCase().execute(.init(notification: notification)) { _ in }
+        }
         self.useCase.saveUserChallengeUseCase().execute(request) { result in
             DispatchQueue.main.async {
                 switch result {
@@ -276,7 +290,8 @@ extension DetailChallengeViewController: DetailChallengeActionCollectionCellDele
                 newChallenge.isActive = true
                 newChallenge.addedDate = Date()
                 let request = SaveUserChallengeUseCaseRequest(
-                    userIds: [currentUserId,connectedUserId],
+                    currentUserId: currentUserId,
+                    connectedUserId: connectedUserId,
                     challenge: newChallenge
                 )
                 self.useCase.saveUserChallengeUseCase().execute(request) { result in
@@ -284,14 +299,24 @@ extension DetailChallengeViewController: DetailChallengeActionCollectionCellDele
                     case .success(let response):
                         DispatchQueue.main.async {
                             MessageKit.hideLoadingView()
-                            print("[DEBUGS] SUCCESS ADD NEW CHALLENGE")
+                            MessageKit.showAlertMessageView(title: "New challenge has been added.", type: .success)
+                            let notification = NotificationDomain(
+                                notificationType: .challengeRequest,
+                                title: "You got new challenge",
+                                message: "new challenge have been added to your current challenge.",
+                                challengeId: request.challenge.id,
+                                date: Date(),
+                                senderId: currentUserId,
+                                receiverId: connectedUserId
+                            )
+                            self.useCase.saveNotificationUseCase().execute(SaveNotificationUseCaseRequest(notification: notification)) { _ in }
                             guard let savedChallenge = response.challenge else { return }
                             self.challenge = savedChallenge
                         }
-                    case .failure(let error):
+                    case .failure:
                         DispatchQueue.main.async {
-                            print("[DEBUGS] ERROR \(error)")
                             MessageKit.hideLoadingView()
+                            MessageKit.showAlertMessageView(title: "Unable to perform request, please check your internet connection.", type: .failure)
                         }
                     }
                 }

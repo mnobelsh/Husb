@@ -39,7 +39,7 @@ class MessageFromWifeNotificationViewController: UIViewController {
         
         view.addSubview(self.heartImageView)
         view.addSubview(self.titleLabel)
-        view.addSubview(self.messageLabel)
+        view.addSubview(self.messageTextView)
         self.heartImageView.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(20)
             make.centerX.equalToSuperview()
@@ -47,13 +47,13 @@ class MessageFromWifeNotificationViewController: UIViewController {
         self.titleLabel.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(35)
             make.trailing.equalToSuperview().offset(-35)
-            make.top.equalTo(self.heartImageView.snp.bottom).offset(20)
-            make.height.equalTo(35)
+            make.top.equalTo(self.heartImageView.snp.bottom).offset(15)
+            make.height.equalTo(50)
         }
-        self.messageLabel.snp.makeConstraints { make in
+        self.messageTextView.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(35)
             make.trailing.equalToSuperview().offset(-35)
-            make.bottom.equalToSuperview().offset(-25)
+            make.bottom.equalToSuperview().offset(-20)
             make.top.equalTo(self.titleLabel.snp.bottom).offset(20)
         }
         return view
@@ -63,29 +63,30 @@ class MessageFromWifeNotificationViewController: UIViewController {
         imageView.contentMode = .scaleAspectFit
         imageView.backgroundColor = .clear
         imageView.snp.makeConstraints { make in
-            make.width.height.equalTo(50)
+            make.width.height.equalTo(30)
         }
         return imageView
     }()
     lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.boldSystemFont(ofSize: 35)
-        label.textColor = .jetBlack
-        label.numberOfLines = 2
-        label.adjustsFontSizeToFitWidth = true
-        label.minimumScaleFactor = 0.6
-        label.textAlignment = .center
-        return label
-    }()
-    lazy var messageLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 25)
+        label.font = UIFont.boldSystemFont(ofSize: 25)
         label.textColor = .jetBlack
         label.numberOfLines = 0
         label.adjustsFontSizeToFitWidth = true
-        label.minimumScaleFactor = 0.6
+        label.minimumScaleFactor = 0.5
         label.textAlignment = .center
         return label
+    }()
+    lazy var messageTextView: UITextView = {
+        let textView = UITextView()
+        textView.font = UIFont.systemFont(ofSize: 23)
+        textView.textColor = .jetBlack
+        textView.isEditable = false
+        textView.textAlignment = .center
+        textView.layer.borderWidth = 2
+        textView.layer.borderColor = UIColor.seaBlue.cgColor
+        textView.layer.cornerRadius = 15
+        return textView
     }()
     lazy var dateLabel: UILabel = {
         let label = UILabel()
@@ -135,8 +136,8 @@ private extension MessageFromWifeNotificationViewController {
         }
         
         self.view.heroID = "MessageFromWifeHero"
-        self.titleLabel.text = self.request.notification.message?.title
-        self.messageLabel.text = self.request.notification.message?.message
+        self.titleLabel.text = self.request.notification.title
+        self.messageTextView.text = self.request.notification.message
         self.dateLabel.text = self.request.notification.date.getString(withFormat: "EEEE,d MMMM YYYY")
     }
     

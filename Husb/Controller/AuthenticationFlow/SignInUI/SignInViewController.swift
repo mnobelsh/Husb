@@ -238,10 +238,10 @@ private extension SignInViewController {
                         MessageKit.hideLoadingView()
                     }
                 }
-            case .failure(let error):
+            case .failure:
                 DispatchQueue.main.async {
                     MessageKit.hideLoadingView()
-                    print("[DEBUGS] ERROR \(error)")
+                    MessageKit.showAlertMessageView(title: "Failed to sign in, please check your internet connection", type: .failure)
                 }
             }
         }

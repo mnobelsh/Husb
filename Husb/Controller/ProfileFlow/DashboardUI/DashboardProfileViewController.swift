@@ -96,9 +96,9 @@ class DashboardProfileViewController: UIViewController {
                 case .success(let response):
                     self.currentUser = response.user
                     MessageKit.hideLoadingView()
-                case .failure(let error):
+                case .failure:
                     MessageKit.hideLoadingView()
-                    print("[DEBUGS] ERROR \(error)")
+                    MessageKit.showAlertMessageView(title: "Unable to perform request, please check your internet connection.", type: .failure)
                 }
             }
         }
@@ -224,11 +224,12 @@ extension DashboardProfileViewController: UIImagePickerControllerDelegate, UINav
                     DispatchQueue.main.async {
                         self.currentUser = response.user
                         MessageKit.hideLoadingView()
+                        MessageKit.showAlertMessageView(title: "Profile image has been updated.", type: .success)
                         picker.dismiss(animated: true, completion: nil)
                     }
-                case .failure(let error):
-                    print("ERROR \(error)")
+                case .failure:
                     MessageKit.hideLoadingView()
+                    MessageKit.showAlertMessageView(title: "Failed to update your profile image.", type: .failure)
                 }
             }
         }

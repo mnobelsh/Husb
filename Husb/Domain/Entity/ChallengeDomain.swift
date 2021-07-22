@@ -200,8 +200,8 @@ extension ChallengeDomain {
     
     static let simpleThings: [ChallengeDomain] = [
         .init(
-            id: "SILLY_KISSESS",
-            title: "Silly Kisses",
+            id: "NIGHT_TIME_CUDDLE",
+            title: "Night Time Cuddle",
             description: "",
             loveLanguage: .physicalTouch,
             role: .hubby,
@@ -210,35 +210,35 @@ extension ChallengeDomain {
             funFact: nil,
             isCompleted: false,
             dueDate: nil,
-            posterImage: .physicalTouch,
+            posterImage: .simpleThingsNightTimeCuddle,
             momentImage: nil
         ),
         .init(
-            id: "SAY_HOW_MUCH_YOU_LOVE_HER",
-            title: "Say How Much You Love Her",
+            id: "GIVE_HER_HUGS",
+            title: "Give Her Hugs",
             description: "",
-            loveLanguage: .wordsOfAffirmation,
+            loveLanguage: .physicalTouch,
             role: .hubby,
             steps: [],
             isActive: false,
             funFact: nil,
             isCompleted: false,
             dueDate: nil,
-            posterImage: .wordsOfAffirmation,
+            posterImage: .simpleThingsGiveHerAHug,
             momentImage: nil
         ),
         .init(
-            id: "ACCIMPANY_IN_HER_ACTIVITIES",
-            title: "Accompany in Her Activities",
+            id: "GUVE_HER_A_KISS",
+            title: "Give Her a Kiss",
             description: "",
-            loveLanguage: .qualityTime,
+            loveLanguage: .physicalTouch,
             role: .hubby,
             steps: [],
             isActive: false,
             funFact: nil,
             isCompleted: false,
             dueDate: nil,
-            posterImage: .qualityTime,
+            posterImage: .simpleThingsGiveHerAKiss,
             momentImage: nil
         ),
     ]

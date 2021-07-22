@@ -22,13 +22,19 @@ protocol DashboardNotificationViewControllerRoute {
         navigationController: UINavigationController?,
         request: ChallengeRequestNotificationViewControllerRequest
     )
+    
+    func showCompletedChallengeNotificationUI(
+        navigationController: UINavigationController?,
+        request: CompletedChallengeNotificationViewControllerRequest
+    )
 }
 
 class DashboardNotificationViewController: UIViewController {
     
     static func create(
         route: DashboardNotificationViewControllerRoute,
-        request: DashboardNotificationViewControllerRequest
+        request: DashboardNotificationViewControllerRequest,
+        useCase: UseCaseFactory
     ) -> DashboardNotificationViewController {
         let viewController = DashboardNotificationViewController()
         viewController.route = route
@@ -38,14 +44,20 @@ class DashboardNotificationViewController: UIViewController {
             selectedImage: UIImage.notificationIcon.withTintColor(.seaBlue, renderingMode: .alwaysOriginal)
         )
         viewController.request = request
+        viewController.useCase = useCase
         return viewController
     }
 
     
     private var route: DashboardNotificationViewControllerRoute!
     private var request: DashboardNotificationViewControllerRequest!
+    private var useCase: UseCaseFactory!
     
-    private var notifications: [NotificationDomain] = []
+    private var notifications: [NotificationDomain] = [] {
+        didSet {
+            self.collectionView.reloadData()
+        }
+    }
     
     // MARK: - SubViews
     private lazy var collectionView: DashboardNotificationCollectionView = DashboardNotificationCollectionView(frame: self.view.bounds)
@@ -57,7 +69,7 @@ class DashboardNotificationViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.enableHero()
+        self.setupViewWillAppear()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -78,6 +90,20 @@ private extension DashboardNotificationViewController {
         self.collectionView.snp.makeConstraints { make in
             make.top.equalToSuperview()
             make.leading.trailing.bottom.equalTo(self.view.safeAreaLayoutGuide)
+        }
+    }
+    
+    func setupViewWillAppear() {
+        self.enableHero()
+        MessageKit.showLoadingView()
+        guard let userId = UserDefaultStorage.shared.getValue(forKey: .currentUserId) as? String else { return }
+        let request = FetchNotificationsUseCaseRquest(userId: userId)
+        self.useCase.fetchNotificationsUseCase().execute(request) { [weak self] result in
+            DispatchQueue.main.async {
+                guard let self = self else { return }
+                self.notifications = (try? result.get().notifications) ?? []
+                MessageKit.hideLoadingView()
+            }
         }
     }
 
@@ -137,6 +163,11 @@ extension DashboardNotificationViewController: UICollectionViewDelegate {
                     request: .init(
                         notification: self.notifications[indexPath.row]
                     )
+                )
+            case .completedChallenge:
+                self.route.showCompletedChallengeNotificationUI(
+                    navigationController: self.navigationController,
+                    request: .init(notification: self.notifications[indexPath.row])
                 )
             }
         default:

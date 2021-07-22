@@ -45,6 +45,13 @@ class SimpleThingsCollectionCell: UICollectionViewCell {
         )
         return button
     }()
+    private lazy var imageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFit
+        imageView.clipsToBounds = true
+        imageView.backgroundColor = .clear
+        return imageView
+    }()
     
     
     override init(frame: CGRect) {
@@ -56,8 +63,9 @@ class SimpleThingsCollectionCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func fill(title: String) {
-        self.titleLabel.text = title
+    func fill(with challenge: ChallengeDomain) {
+        self.titleLabel.text = challenge.title
+        self.imageView.image = challenge.posterImage
     }
     
     
@@ -69,12 +77,18 @@ private extension SimpleThingsCollectionCell {
     private func setupUI() {
         self.backgroundColor = .skyBlue
         self.contentView.addSubview(self.titleLabel)
+        self.contentView.addSubview(self.imageView)
         self.contentView.addSubview(self.checkBoxButton)
         self.titleLabel.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(10)
             make.top.equalToSuperview().offset(10)
             make.trailing.equalToSuperview().offset(-10)
             make.height.equalTo(50)
+        }
+        self.imageView.snp.makeConstraints { make in
+            make.top.equalTo(self.titleLabel.snp.bottom).offset(5)
+            make.leading.equalToSuperview().offset(10)
+            make.trailing.bottom.equalToSuperview().offset(-10)
         }
         self.checkBoxButton.snp.makeConstraints { make in
             make.trailing.equalToSuperview().offset(-10)

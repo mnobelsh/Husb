@@ -76,6 +76,7 @@ extension UIImage {
     static let noChallenge = UIImage(named: "noChallenge")!
     static let customChallenge = UIImage(named: "customChallenge")!
     static let appLogo = UIImage(named: "appLogo")!
+    static let loveLetter = UIImage(named: "loveLetter")!
     
 }
 

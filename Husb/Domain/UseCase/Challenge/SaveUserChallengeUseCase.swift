@@ -14,7 +14,8 @@ struct SaveUserChallengeUseCaseResponse {
 }
 
 struct SaveUserChallengeUseCaseRequest {
-    let userIds: [String]
+    let currentUserId: String
+    let connectedUserId: String?
     let challenge: ChallengeDomain
 }
 
@@ -67,7 +68,11 @@ extension DefaultSaveUserChallengeUseCase: SaveUserChallengeUseCase {
         }
         
         dispatchGroup.notify(queue: dispatchQueue) {
-            let userPredicate = NSPredicate(format: "\(User.idKey) IN %@", request.userIds)
+            var userIds = [request.currentUserId]
+            if let connedtedUserId = request.connectedUserId {
+                userIds.append(connedtedUserId)
+            }
+            let userPredicate = NSPredicate(format: "\(User.idKey) IN %@", userIds)
             let userQuery = CKQuery(recordType: .profiles, predicate: userPredicate)
             self.remoteService.publicDatabase.perform(userQuery, inZoneWith: nil) { records, error in
                 if let error = error {
@@ -101,9 +106,10 @@ extension DefaultSaveUserChallengeUseCase: SaveUserChallengeUseCase {
                                             case .failure(let error):
                                                 completion(.failure(error))
                                             case .success:
-                                                completion(.success(.init(challenge: request.challenge)))
+                                                break
                                             }
                                         }
+                                        completion(.success(.init(challenge: request.challenge)))
                                     }
                                 }
                             }

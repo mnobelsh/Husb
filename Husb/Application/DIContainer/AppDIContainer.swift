@@ -22,7 +22,8 @@ typealias ViewControllerRoute =
     ExploreSearchViewControllerRoute &
     MessageFromWifeNotificationViewControllerRoute &
     ChallengeRequestNotificationViewControllerRoute &
-    ConnectProfileViewControllerRoute
+    ConnectProfileViewControllerRoute &
+    CompletedChallengeNotificationViewControllerRoute
 
 
 enum AppInstructor {

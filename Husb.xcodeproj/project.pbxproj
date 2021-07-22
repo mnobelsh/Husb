@@ -70,6 +70,16 @@
 		FF4968D926778F2400153484 /* ExploreCollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4968D826778F2400153484 /* ExploreCollectionHeaderView.swift */; };
 		FF9A5B5526A5E04A00D697D4 /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = FF9A5B5426A5E04A00D697D4 /* SkeletonView */; };
 		FF9A5B5826A6B32E00D697D4 /* Reachability in Frameworks */ = {isa = PBXBuildFile; productRef = FF9A5B5726A6B32E00D697D4 /* Reachability */; };
+		FF9A5B5A26A736F100D697D4 /* CreateCustomChallengeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9A5B5926A736F100D697D4 /* CreateCustomChallengeView.swift */; };
+		FF9A5B5C26A737B600D697D4 /* MoodPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9A5B5B26A737B600D697D4 /* MoodPickerView.swift */; };
+		FF9A5B5E26A7387900D697D4 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9A5B5D26A7387900D697D4 /* Notification.swift */; };
+		FF9A5B6126A73CC500D697D4 /* SaveNotificationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9A5B6026A73CC500D697D4 /* SaveNotificationUseCase.swift */; };
+		FF9A5B6326A73D3A00D697D4 /* FetchNotifiationsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9A5B6226A73D3A00D697D4 /* FetchNotifiationsUseCase.swift */; };
+		FF9A5B6526A7660600D697D4 /* MoodCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9A5B6426A7660600D697D4 /* MoodCollectionCell.swift */; };
+		FF9A5B6826A9323B00D697D4 /* CompletedChallengeNotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9A5B6726A9323B00D697D4 /* CompletedChallengeNotificationViewController.swift */; };
+		FF9A5B6A26A9827300D697D4 /* AlertMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9A5B6926A9827300D697D4 /* AlertMessageView.swift */; };
+		FF9A5B6D26A9843000D697D4 /* success-animation.json in Resources */ = {isa = PBXBuildFile; fileRef = FF9A5B6B26A9843000D697D4 /* success-animation.json */; };
+		FF9A5B6E26A9843000D697D4 /* failure-animation.json in Resources */ = {isa = PBXBuildFile; fileRef = FF9A5B6C26A9843000D697D4 /* failure-animation.json */; };
 		FFA978E3267F740F00CBB59C /* DetailChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA978E2267F740F00CBB59C /* DetailChallengeViewController.swift */; };
 		FFA978E6267F75EA00CBB59C /* DetailChallengeCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA978E5267F75EA00CBB59C /* DetailChallengeCollectionView.swift */; };
 		FFA978E8267F77DE00CBB59C /* ChallengeCategoryCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA978E7267F77DE00CBB59C /* ChallengeCategoryCollectionView.swift */; };
@@ -220,6 +230,16 @@
 		FF4968D32677439F00153484 /* ExploreCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreCollectionView.swift; sourceTree = "<group>"; };
 		FF4968D62677847900153484 /* LoveLanguageCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoveLanguageCollectionCell.swift; sourceTree = "<group>"; };
 		FF4968D826778F2400153484 /* ExploreCollectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreCollectionHeaderView.swift; sourceTree = "<group>"; };
+		FF9A5B5926A736F100D697D4 /* CreateCustomChallengeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCustomChallengeView.swift; sourceTree = "<group>"; };
+		FF9A5B5B26A737B600D697D4 /* MoodPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodPickerView.swift; sourceTree = "<group>"; };
+		FF9A5B5D26A7387900D697D4 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		FF9A5B6026A73CC500D697D4 /* SaveNotificationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveNotificationUseCase.swift; sourceTree = "<group>"; };
+		FF9A5B6226A73D3A00D697D4 /* FetchNotifiationsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchNotifiationsUseCase.swift; sourceTree = "<group>"; };
+		FF9A5B6426A7660600D697D4 /* MoodCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodCollectionCell.swift; sourceTree = "<group>"; };
+		FF9A5B6726A9323B00D697D4 /* CompletedChallengeNotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedChallengeNotificationViewController.swift; sourceTree = "<group>"; };
+		FF9A5B6926A9827300D697D4 /* AlertMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertMessageView.swift; sourceTree = "<group>"; };
+		FF9A5B6B26A9843000D697D4 /* success-animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "success-animation.json"; sourceTree = "<group>"; };
+		FF9A5B6C26A9843000D697D4 /* failure-animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "failure-animation.json"; sourceTree = "<group>"; };
 		FFA978E2267F740F00CBB59C /* DetailChallengeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailChallengeViewController.swift; sourceTree = "<group>"; };
 		FFA978E5267F75EA00CBB59C /* DetailChallengeCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailChallengeCollectionView.swift; sourceTree = "<group>"; };
 		FFA978E7267F77DE00CBB59C /* ChallengeCategoryCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeCategoryCollectionView.swift; sourceTree = "<group>"; };
@@ -455,6 +475,10 @@
 				FFC45450269FA5010094FDA8 /* LoadingMessageView.swift */,
 				FFC45452269FA52C0094FDA8 /* QRCodeMessageView.swift */,
 				FFC4545F26A05A690094FDA8 /* ScanQRCodeMessageView.swift */,
+				FF9A5B5926A736F100D697D4 /* CreateCustomChallengeView.swift */,
+				FF9A5B5B26A737B600D697D4 /* MoodPickerView.swift */,
+				FF9A5B6426A7660600D697D4 /* MoodCollectionCell.swift */,
+				FF9A5B6926A9827300D697D4 /* AlertMessageView.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -543,6 +567,7 @@
 				FF31FE19269D5DEC009890FF /* Challenge.swift */,
 				FF31FE1B269D5ED3009890FF /* ChallengeStep.swift */,
 				FF31FE1D269D67D3009890FF /* FunFact.swift */,
+				FF9A5B5D26A7387900D697D4 /* Notification.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -564,6 +589,23 @@
 				FF31FE34269E34CF009890FF /* ValidateIsUserSignedInUseCase.swift */,
 			);
 			path = User;
+			sourceTree = "<group>";
+		};
+		FF9A5B5F26A73CB900D697D4 /* Notificaiton */ = {
+			isa = PBXGroup;
+			children = (
+				FF9A5B6026A73CC500D697D4 /* SaveNotificationUseCase.swift */,
+				FF9A5B6226A73D3A00D697D4 /* FetchNotifiationsUseCase.swift */,
+			);
+			path = Notificaiton;
+			sourceTree = "<group>";
+		};
+		FF9A5B6626A9321B00D697D4 /* CompletedChallengeUI */ = {
+			isa = PBXGroup;
+			children = (
+				FF9A5B6726A9323B00D697D4 /* CompletedChallengeNotificationViewController.swift */,
+			);
+			path = CompletedChallengeUI;
 			sourceTree = "<group>";
 		};
 		FFA978DC267F73A900CBB59C /* DashboardUI */ = {
@@ -617,6 +659,8 @@
 		FFC4546426A334210094FDA8 /* Lottie */ = {
 			isa = PBXGroup;
 			children = (
+				FF9A5B6B26A9843000D697D4 /* success-animation.json */,
+				FF9A5B6C26A9843000D697D4 /* failure-animation.json */,
 				FFC4546726A335120094FDA8 /* loading-animation.json */,
 			);
 			path = Lottie;
@@ -816,6 +860,7 @@
 			isa = PBXGroup;
 			children = (
 				FF31FDB726962901009890FF /* DashboardUI */,
+				FF9A5B6626A9321B00D697D4 /* CompletedChallengeUI */,
 				FF31FDEE269ADAD6009890FF /* ChallengeRequestUI */,
 				FF31FDE5269A4967009890FF /* MessageFromWifeUI */,
 			);
@@ -834,6 +879,7 @@
 		FFDAC9742674C3D4000D3B3B /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
+				FF9A5B5F26A73CB900D697D4 /* Notificaiton */,
 				FF31FE2D269DC8BB009890FF /* User */,
 				FF31FE1F269D7AB1009890FF /* Challenge */,
 				FF31FE0A269CBB17009890FF /* OnBoarding */,
@@ -1018,7 +1064,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				FFC4546826A335120094FDA8 /* loading-animation.json in Resources */,
+				FF9A5B6D26A9843000D697D4 /* success-animation.json in Resources */,
 				FFDAC8BF2674B505000D3B3B /* LaunchScreen.storyboard in Resources */,
+				FF9A5B6E26A9843000D697D4 /* failure-animation.json in Resources */,
 				FFDAC8BC2674B505000D3B3B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1148,6 +1196,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF31FDED269A4FD0009890FF /* MessageDomain.swift in Sources */,
+				FF9A5B5A26A736F100D697D4 /* CreateCustomChallengeView.swift in Sources */,
 				FFDAC91D2674B9BE000D3B3B /* DashboardCalendarViewController.swift in Sources */,
 				FFA978F02680825800CBB59C /* DetailChallengeCollectionHeaderView.swift in Sources */,
 				FFDAC9A42674CE4F000D3B3B /* UIImage.swift in Sources */,
@@ -1169,6 +1218,7 @@
 				FF2166272686F11600F0F26F /* ChallengeDomain.swift in Sources */,
 				FF31FDD426995DF5009890FF /* UncompletedChallengeCollectionCell.swift in Sources */,
 				FF31FE33269E0BD7009890FF /* FetchUserUseCase.swift in Sources */,
+				FF9A5B6326A73D3A00D697D4 /* FetchNotifiationsUseCase.swift in Sources */,
 				FFDAC9222674B9C9000D3B3B /* DashboardNotificationViewController.swift in Sources */,
 				FFDAC9092674B928000D3B3B /* SignUpViewController.swift in Sources */,
 				FF31FE23269D84C4009890FF /* SaveUserChallengeUseCase.swift in Sources */,
@@ -1191,6 +1241,7 @@
 				FF31FDD02698A97E009890FF /* CalendarDateCollectionCell.swift in Sources */,
 				FF216644268784BD00F0F26F /* ChallengeStepDomain.swift in Sources */,
 				FF31FDD626995E03009890FF /* CompletedChallengeCollectionCell.swift in Sources */,
+				FF9A5B5C26A737B600D697D4 /* MoodPickerView.swift in Sources */,
 				FF2166372687102C00F0F26F /* PersistenceService.swift in Sources */,
 				FFDAC9C02674E2EC000D3B3B /* CurrentChallengeCollectionCell.swift in Sources */,
 				FFC4546A26A478AC0094FDA8 /* EmptyCollectionViewCell.swift in Sources */,
@@ -1213,12 +1264,15 @@
 				FFDAC8B22674B502000D3B3B /* SceneDelegate.swift in Sources */,
 				FFEC88A7268F900E00B8617B /* FunFactDomain.swift in Sources */,
 				FF31FDCA26977B1D009890FF /* CalendarDateCollectionView.swift in Sources */,
+				FF9A5B6826A9323B00D697D4 /* CompletedChallengeNotificationViewController.swift in Sources */,
 				FFC4546026A05A6A0094FDA8 /* ScanQRCodeMessageView.swift in Sources */,
 				FF31FDD22698B8F6009890FF /* CalendarChallengeCollectionView.swift in Sources */,
 				FFDAC8BA2674B502000D3B3B /* Husb.xcdatamodeld in Sources */,
 				FF31FDF2269B531E009890FF /* DashboardProfileTableView.swift in Sources */,
 				FFC4546326A1CA0B0094FDA8 /* ConnectProfileViewController.swift in Sources */,
 				FF21662B2686F1A800F0F26F /* MoodDomain.swift in Sources */,
+				FF9A5B5E26A7387900D697D4 /* Notification.swift in Sources */,
+				FF9A5B6526A7660600D697D4 /* MoodCollectionCell.swift in Sources */,
 				FF31FE18269D5990009890FF /* User.swift in Sources */,
 				FF21663E268740D000F0F26F /* DetailChallengeDescriptionCollectionCell.swift in Sources */,
 				FFDAC9182674B9B8000D3B3B /* DashboardExploreViewController.swift in Sources */,
@@ -1231,12 +1285,14 @@
 				FF21663426870C4500F0F26F /* AppDIContainer+ViewControllerRoute.swift in Sources */,
 				FFDAC9272674B9D1000D3B3B /* DashboardProfileViewController.swift in Sources */,
 				FFDAC98E2674C4CE000D3B3B /* UseCaseFactory.swift in Sources */,
+				FF9A5B6126A73CC500D697D4 /* SaveNotificationUseCase.swift in Sources */,
 				FFDAC9D92675D21A000D3B3B /* DefaultChallengeCollectionCell.swift in Sources */,
 				FFDAC8FF2674B918000D3B3B /* OnBoardingViewController.swift in Sources */,
 				FF31FE1E269D67D3009890FF /* FunFact.swift in Sources */,
 				FF31FE21269D7AD1009890FF /* FetchUserChallengesUseCase.swift in Sources */,
 				FF31FDEB269A4FA3009890FF /* UserDomain.swift in Sources */,
 				FF21662D2686F1B700F0F26F /* TipsDomain.swift in Sources */,
+				FF9A5B6A26A9827300D697D4 /* AlertMessageView.swift in Sources */,
 				FF31FDBA26962A30009890FF /* MessageKit.swift in Sources */,
 				FFDAC90E2674B969000D3B3B /* LaunchPadViewController.swift in Sources */,
 				FF31FDF0269ADC7D009890FF /* ChallengeRequestNotificationViewController.swift in Sources */,
@@ -1413,6 +1469,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Husb/Husb.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 8MV3PNW544;
 				INFOPLIST_FILE = Husb/Resource/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -1435,6 +1492,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Husb/Husb.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 8MV3PNW544;
 				INFOPLIST_FILE = Husb/Resource/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;

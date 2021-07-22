@@ -25,4 +25,7 @@ protocol UseCaseFactory {
     func fetchUserChallengesUseCase() -> FetchUserChallengesUseCase
     func saveUserChallengeUseCase() -> SaveUserChallengeUseCase
     
+    func saveNotificationUseCase() -> SaveNotificationUseCase
+    func fetchNotificationsUseCase() -> FetchNotificationsUseCase
+    
 }

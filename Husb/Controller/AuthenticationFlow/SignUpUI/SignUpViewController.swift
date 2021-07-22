@@ -420,14 +420,15 @@ private extension SignUpViewController {
         let request = SaveUserUseCaseRequest(user: newUser)
         self.useCase.saveUserUseCase().execute(request) { result in
             switch result {
-            case .success:
+            case .success(let response):
                 DispatchQueue.main.async {
+                    UserDefaultStorage.shared.setValue(response.user.id, forKey: .currentUserId)
                     MessageKit.hideLoadingView()
                     AppDIContainer.shared.start(instructor: .mainApp)
                 }
             case .failure:
                 MessageKit.hideLoadingView()
-                break
+                MessageKit.showAlertMessageView(title: "Failed to sign up, please check your internet connection.", type: .failure)
             }
             
         }

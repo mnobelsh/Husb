@@ -75,17 +75,18 @@ class NotificationCollectionCell: UICollectionViewCell {
     }
     
     func fill(with notification: NotificationDomain) {
+        self.titleLabel.text = notification.title
+        self.descriptionLabel.text = notification.message
         switch notification.notificationType {
         case .challengeRequest:
-            self.titleLabel.text = notification.challenge?.title
-            self.descriptionLabel.text = notification.challenge?.description
             self.messageIconView.image = .messageYellow
             self.messageIconView.heroID = "ChallengeRequestHero"
         case .message:
-            self.titleLabel.text = notification.message?.title
-            self.descriptionLabel.text = notification.message?.message
-            self.messageIconView.image = .messageBlue
+            self.messageIconView.image = .loveLetter
             self.messageIconView.heroID = "MessageFromWifeHero"
+        case .completedChallenge:
+            self.messageIconView.image = .loveLetter
+            self.messageIconView.heroID = "CompletedChallengeMessage"
         }
     }
 }

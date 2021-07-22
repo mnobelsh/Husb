@@ -36,11 +36,24 @@ class DashboardChallengeViewController: UIViewController {
     
     private var currentUser: UserDomain? {
         didSet {
-            guard let currentUserId = currentUser?.id else { return }
+            guard let currentUserId = self.currentUser?.id else { return }
             self.fetchUserChallenges(userId: currentUserId) {
                 self.challengeCollectionView.reloadData()
                 self.challengeCollectionView.stopSkeletonAnimation()
                 self.challengeCollectionView.hideSkeleton()
+            }
+            guard let connectedUserId = self.currentUser?.connectedUserId else { return }
+            self.useCase.fetchUserUseCase().execute(.init(parameter: .byId(userId: connectedUserId))) { result in
+                DispatchQueue.main.async {
+                    self.connectedUser = try? result.get().user
+                }
+            }
+        }
+    }
+    private var connectedUser: UserDomain? {
+        didSet {
+            self.challengeCollectionView.performBatchUpdates {
+                self.challengeCollectionView.reloadSections(IndexSet(integer: DashboardChallengeCollectionView.Section.mood.rawValue))
             }
         }
     }
@@ -82,10 +95,6 @@ class DashboardChallengeViewController: UIViewController {
         self.setupViewWillAppear()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-    }
-    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.disableHero()
@@ -110,11 +119,11 @@ private extension DashboardChallengeViewController {
             make.leading.trailing.bottom.equalTo(self.view.safeAreaLayoutGuide)
         }
         self.setupCollectionView()
-        self.fetchUser()
         self.challengeCollectionView.isSkeletonable = true
     }
     
     func setupViewWillAppear() {
+        self.fetchUser()
         self.enableHero()
     }
     
@@ -225,12 +234,24 @@ extension DashboardChallengeViewController: UICollectionViewDataSource {
         case .simpleThings:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SimpleThingsCollectionCell.identifier, for: indexPath) as? SimpleThingsCollectionCell  else { return UICollectionViewCell() }
             cell.delegate = self
-            cell.fill(title: self.simpleThings[indexPath.row].title)
+            cell.fill(with: self.simpleThings[indexPath.row])
             return cell
         case .mood:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: WifeMoodCollectionCell.identifier, for: indexPath) as? WifeMoodCollectionCell  else { return UICollectionViewCell() }
             cell.isSkeletonable = true
-            cell.fill(mood: self.wifeMood)
+            let role = self.currentUser?.role.type ?? .couple
+            switch role {
+            case .hubby:
+                if let connectedUser = self.connectedUser {
+                    cell.fill(mood: connectedUser.mood ?? .happy, role: .hubby)
+                } else {
+                    cell.fill(description: "You haven't been connected with your wife.")
+                }
+            case .wife:
+                cell.fill(mood: self.currentUser?.mood ?? .happy, role: .wife)
+            default:
+                break
+            }
             return cell
             
         case .savedChallenge:
@@ -304,6 +325,25 @@ extension DashboardChallengeViewController: UICollectionViewDelegate {
                     request: .init(challenge: self.savedChallenges[indexPath.row])
                 )
             }
+        case .mood:
+            guard let user = self.currentUser, user.role.type == .wife else { return }
+            let viewId = UUID().uuidString
+            let confirmAction = { (_ selectedMood: MoodDomain) in
+                var savedUser = user
+                savedUser.mood = selectedMood
+                let request = SaveUserUseCaseRequest(user: savedUser)
+                self.useCase.saveUserUseCase().execute(request) { _ in
+                    DispatchQueue.main.async {
+                        self.fetchUser()
+                        MessageKit.hide(id: viewId)
+                    }
+                }
+                
+            }
+            MessageKit.showMoodPickerView(
+                withId: viewId,
+                confirmAction: confirmAction
+            )
         default:
             break
         }

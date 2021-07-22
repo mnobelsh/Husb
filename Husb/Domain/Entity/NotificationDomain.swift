@@ -9,37 +9,26 @@ import UIKit
 
 struct NotificationDomain {
     
-    enum NotificationType {
-        case message
-        case challengeRequest
+    enum NotificationType: String {
+        case message = "MESSAGE"
+        case challengeRequest = "CHALLENGE_REQUEST"
+        case completedChallenge = "COMPLETED_CHALLENGE"
     }
     
     var id: String = UUID().uuidString
     var notificationType: NotificationType
-    var message: MessageDomain?
-    var challenge: ChallengeDomain?
+    var title: String
+    var message: String
+    var challengeId: String?
     var date: Date
     var isRead: Bool = false
+    var senderId: String = ""
+    var receiverId: String = ""
     
 }
 
 
 extension NotificationDomain {
     
-    
-    static let list: [NotificationDomain] = [
-        .init(
-            notificationType: .message,
-            message: .init(
-                title: "Message From Your Wife",
-                message: "Thank you for always trying your best to be the best husband for me. I really appreciate everything that you did for me and our little ones. Please be home soon. I miss you "),
-            date: Date()
-        ),
-        .init(
-            notificationType: .challengeRequest,
-            challenge: ChallengeDomain.actOfService.first!,
-            date: Date()
-        )
-    ]
     
 }

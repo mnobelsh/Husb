@@ -177,20 +177,38 @@ class ConnectProfileViewController: UIViewController {
                             switch result {
                             case .success:
                                 DispatchQueue.main.async {
-                                    print("[DEBUGS] SHOW SUCCESS MESSAGE")
                                     MessageKit.hideLoadingView()
+                                    var title = "Success to connect with your partner."
+                                    switch updatedCurrentUser.role.type {
+                                    case .hubby:
+                                        title = "Success to connect with your wife."
+                                    case .wife:
+                                        title = "Success to connect with your husband."
+                                    default:
+                                        break
+                                    }
+                                    MessageKit.showAlertMessageView(title: title, type: .success)
                                 }
                             case .failure:
                                 DispatchQueue.main.async {
-                                    print("[DEBUGS] FAILURE")
                                     MessageKit.hideLoadingView()
+                                    var title = "Failed to connect with your partner."
+                                    switch updatedCurrentUser.role.type {
+                                    case .hubby:
+                                        title = "Failed to connect with your wife."
+                                    case .wife:
+                                        title = "Failed to connect with your husband."
+                                    default:
+                                        break
+                                    }
+                                    MessageKit.showAlertMessageView(title: title, type: .failure)
                                 }
                             }
                         }
                 case .failure:
                     DispatchQueue.main.async {
-                        print("[DEBUGS] FAILURE")
                         MessageKit.hideLoadingView()
+                        MessageKit.showAlertMessageView(title: "Action failed.", type: .failure)
                     }
                 }
             }
@@ -204,7 +222,8 @@ extension ConnectProfileViewController {
     
     static func makeProfileContainerView(for name: String, user: UserDomain) -> UIView {
         let view = UIView()
-        let imageView = UIImageView(image: user.profileImage)
+        let image = user.role.type == .hubby ? UIImage.hubbyIcon : UIImage.wifeyIcon
+        let imageView = UIImageView(image: user.profileImage ?? image)
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         imageView.backgroundColor = .spaceGrey

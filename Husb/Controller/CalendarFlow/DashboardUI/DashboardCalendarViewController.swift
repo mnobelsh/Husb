@@ -266,7 +266,7 @@ private extension DashboardCalendarViewController {
                         self.currentUser = response.user
                         completion()
                     case .failure(let error):
-                        print("[DEBUGS] ERROR \(error)")
+                        MessageKit.showAlertMessageView(title: "Unable to perform request, please check your internet connection.", type: .failure)
                         completion()
                     }
                 }
@@ -293,9 +293,9 @@ private extension DashboardCalendarViewController {
                         self.uncompletedChallenges = todayChallenges.filter({$0.isActive && !$0.isCompleted})
                         self.completedChallenges = todayChallenges.filter({$0.isActive && $0.isCompleted})
                         completion()
-                    case .failure(let error):
+                    case .failure:
                         completion()
-                        print("[DEBUGS] ERROR \(error)")
+                        MessageKit.showAlertMessageView(title: "Unable to perform request, please check your internet connection.", type: .failure)
                     }
                 }
             }

@@ -9,6 +9,15 @@ import Foundation
 
 extension AppDIContainer: UseCaseFactory {
     
+    func saveNotificationUseCase() -> SaveNotificationUseCase {
+        return DefaultSaveNotificationUseCase()
+    }
+    
+    func fetchNotificationsUseCase() -> FetchNotificationsUseCase {
+        return DefaultFetchNotificationsUseCase()
+    }
+    
+    
     func validateIsUserSignedInUseCase() -> ValidateIsUserSignedInUseCase {
         return DefaultValidateIsUserSignedInUseCase()
     }

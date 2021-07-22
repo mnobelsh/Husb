@@ -26,5 +26,6 @@ extension CKRecord.RecordType {
     static let challenges = "Challenges"
     static let challengeSteps = "ChallengeSteps"
     static let funFact = "FunFacts"
+    static let notifications = "Notifications"
     
 }
