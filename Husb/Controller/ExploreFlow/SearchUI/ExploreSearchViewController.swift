@@ -63,7 +63,10 @@ class ExploreSearchViewController: UIViewController {
         searchBar.autocapitalizationType = .none
         searchBar.returnKeyType = .search
         searchBar.searchTextField.textColor = .jetBlack
-        searchBar.placeholder = "Search with love"
+        searchBar.searchTextField.attributedPlaceholder = NSAttributedString(string: "Search with love", attributes: [
+            .foregroundColor: UIColor.spaceGrey,
+            .font: UIFont.systemFont(ofSize: 16)
+        ])
         searchBar.barTintColor = UIColor.clear
         searchBar.backgroundColor = UIColor.clear
         searchBar.isTranslucent = true

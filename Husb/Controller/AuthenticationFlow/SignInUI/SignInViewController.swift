@@ -72,7 +72,10 @@ class SignInViewController: UIViewController {
     lazy var usernameTextField: UITextField = {
         let textField = UITextField()
         textField.textColor = .darkGray
-        textField.placeholder = "Username"
+        textField.attributedPlaceholder = NSAttributedString(string: "Username", attributes: [
+            .foregroundColor: UIColor.spaceGrey,
+            .font: UIFont.systemFont(ofSize: 16)
+        ])
         textField.delegate = self
         return textField
     }()
@@ -80,7 +83,10 @@ class SignInViewController: UIViewController {
         let textField = UITextField()
         textField.textColor = .darkGray
         textField.isSecureTextEntry = true
-        textField.placeholder = "Password"
+        textField.attributedPlaceholder = NSAttributedString(string: "Password", attributes: [
+            .foregroundColor: UIColor.spaceGrey,
+            .font: UIFont.systemFont(ofSize: 16)
+        ])
         textField.delegate = self
         return textField
     }()

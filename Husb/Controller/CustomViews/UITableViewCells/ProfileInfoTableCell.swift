@@ -60,7 +60,10 @@ class ProfileInfoTableCell: UITableViewCell {
     }()
     lazy var connectedUserTextField: UITextField = {
         let textField = UITextField()
-        textField.placeholder = "You haven't been connected"
+        textField.attributedPlaceholder = NSAttributedString(string: "You haven't been connected", attributes: [
+            .foregroundColor: UIColor.spaceGrey,
+            .font: UIFont.systemFont(ofSize: 16)
+        ])
         textField.textColor = .darkGray
         textField.isEnabled = false
         return textField

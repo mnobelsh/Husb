@@ -37,7 +37,10 @@ class SignUpViewController: UIViewController {
     lazy var usernameTextField: UITextField = {
         let textField = UITextField()
         textField.textColor = .darkGray
-        textField.placeholder = "Username"
+        textField.attributedPlaceholder = NSAttributedString(string: "Username", attributes: [
+            .foregroundColor: UIColor.spaceGrey,
+            .font: UIFont.systemFont(ofSize: 16)
+        ])
         textField.delegate = self
         return textField
     }()
@@ -53,7 +56,10 @@ class SignUpViewController: UIViewController {
     lazy var fullnameTextField: UITextField = {
         let textField = UITextField()
         textField.textColor = .darkGray
-        textField.placeholder = "Full Name"
+        textField.attributedPlaceholder = NSAttributedString(string: "Full Name", attributes: [
+            .foregroundColor: UIColor.spaceGrey,
+            .font: UIFont.systemFont(ofSize: 16)
+        ])
         textField.delegate = self
         return textField
     }()
@@ -69,7 +75,10 @@ class SignUpViewController: UIViewController {
     lazy var emailTextField: UITextField = {
         let textField = UITextField()
         textField.textColor = .darkGray
-        textField.placeholder = "Email"
+        textField.attributedPlaceholder = NSAttributedString(string: "Email", attributes: [
+            .foregroundColor: UIColor.spaceGrey,
+            .font: UIFont.systemFont(ofSize: 16)
+        ])
         textField.keyboardType = .emailAddress
         textField.delegate = self
         return textField
@@ -87,7 +96,10 @@ class SignUpViewController: UIViewController {
         let textField = UITextField()
         textField.textColor = .darkGray
         textField.isSecureTextEntry = true
-        textField.placeholder = "Password"
+        textField.attributedPlaceholder = NSAttributedString(string: "Password", attributes: [
+            .foregroundColor: UIColor.spaceGrey,
+            .font: UIFont.systemFont(ofSize: 16)
+        ])
         textField.delegate = self
         return textField
     }()
@@ -104,7 +116,10 @@ class SignUpViewController: UIViewController {
         let textField = UITextField()
         textField.textColor = .darkGray
         textField.isSecureTextEntry = true
-        textField.placeholder = "Confirm Password"
+        textField.attributedPlaceholder = NSAttributedString(string: "Confirm Password", attributes: [
+            .foregroundColor: UIColor.spaceGrey,
+            .font: UIFont.systemFont(ofSize: 16)
+        ])
         textField.delegate = self
         return textField
     }()

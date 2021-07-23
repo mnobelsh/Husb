@@ -27,7 +27,10 @@ class CreateCustomChallengeView: MessageView {
     lazy var challengeTitleTextField: UITextField = {
         let textField = UITextField()
         textField.textColor = .darkGray
-        textField.placeholder = "Challenge Title"
+        textField.attributedPlaceholder = NSAttributedString(string: "Challenge Title", attributes: [
+            .foregroundColor: UIColor.spaceGrey,
+            .font: UIFont.systemFont(ofSize: 16)
+        ])
         textField.delegate = self
         return textField
     }()
@@ -53,7 +56,10 @@ class CreateCustomChallengeView: MessageView {
     lazy var roleTextField: UITextField = {
         let textField = UITextField()
         textField.textColor = .darkGray
-        textField.placeholder = "Role"
+        textField.attributedPlaceholder = NSAttributedString(string: "Role", attributes: [
+            .foregroundColor: UIColor.spaceGrey,
+            .font: UIFont.systemFont(ofSize: 16)
+        ])
         textField.delegate = self
         textField.inputView = self.rolePickerView
         return textField
@@ -67,7 +73,10 @@ class CreateCustomChallengeView: MessageView {
     lazy var loveLanguageTextField: UITextField = {
         let textField = UITextField()
         textField.textColor = .darkGray
-        textField.placeholder = "Love Language"
+        textField.attributedPlaceholder = NSAttributedString(string: "Love Language", attributes: [
+            .foregroundColor: UIColor.spaceGrey,
+            .font: UIFont.systemFont(ofSize: 16)
+        ])
         textField.delegate = self
         textField.inputView = self.loveLanguagePickerView
         return textField
