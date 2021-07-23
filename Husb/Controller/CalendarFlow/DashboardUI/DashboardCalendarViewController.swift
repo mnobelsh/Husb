@@ -265,7 +265,7 @@ private extension DashboardCalendarViewController {
                     case .success(let response):
                         self.currentUser = response.user
                         completion()
-                    case .failure(let error):
+                    case .failure:
                         MessageKit.showAlertMessageView(title: "Unable to perform request, please check your internet connection.", type: .failure)
                         completion()
                     }

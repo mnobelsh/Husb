@@ -133,8 +133,10 @@ private extension DashboardChallengeViewController {
     }
     
     func fetchUser() {
+        MessageKit.showLoadingView()
         self.useCase.fetchUserUseCase().execute(.init(parameter: .current)) { result in
             DispatchQueue.main.async {
+                MessageKit.hideLoadingView()
                 switch result {
                 case .success(let response):
                     self.currentUser = response.user

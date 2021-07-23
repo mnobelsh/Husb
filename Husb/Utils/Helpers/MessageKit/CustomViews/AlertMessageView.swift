@@ -11,12 +11,43 @@ import Lottie
 
 class AlertMessageView: MessageView {
     
-    lazy var animationView: AnimationView = {
+    lazy var successAnimationView: AnimationView = {
+        let animationView = AnimationView(name: .successAnimation)
+        animationView.snp.makeConstraints { make in
+            make.width.height.equalTo(65)
+        }
+        animationView.loopMode = .playOnce
+        animationView.animationSpeed = 1
+        animationView.contentMode = .scaleAspectFit
+        animationView.backgroundColor = .clear
+        return animationView
+    }()
+    lazy var failureAnimationView: AnimationView = {
         let animationView = AnimationView(name: .failureAnimation)
         animationView.snp.makeConstraints { make in
             make.width.height.equalTo(65)
         }
+        animationView.loopMode = .playOnce
+        animationView.animationSpeed = 1
+        animationView.contentMode = .scaleAspectFit
+        animationView.backgroundColor = .clear
         return animationView
+    }()
+    lazy var animationContainerView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .clear
+        view.snp.makeConstraints { make in
+            make.width.height.equalTo(65)
+        }
+        view.addSubview(self.successAnimationView)
+        view.addSubview(self.failureAnimationView)
+        self.successAnimationView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+        self.failureAnimationView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+        return view
     }()
     lazy var customTitleLabel: UILabel = {
         let label = UILabel()
@@ -33,17 +64,16 @@ class AlertMessageView: MessageView {
         view.backgroundColor = .pearlWhite
         view.dropShadow()
         view.layer.cornerRadius = 15
-        view.addSubview(self.animationView)
+        view.addSubview(self.animationContainerView)
         view.addSubview(self.customTitleLabel)
         
-        self.animationView.snp.makeConstraints { make in
+        self.animationContainerView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalToSuperview().offset(20)
         }
-        
         self.customTitleLabel.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(25)
-            make.top.equalTo(self.animationView.snp.bottom).offset(15)
+            make.top.equalTo(self.animationContainerView.snp.bottom).offset(15)
             make.bottom.equalToSuperview().offset(-15)
         }
         return view
@@ -57,11 +87,11 @@ class AlertMessageView: MessageView {
             make.leading.trailing.equalToSuperview().inset(50)
             make.top.bottom.equalToSuperview()
         }
-        self.animationView.play()
     }
     
     deinit {
-        self.animationView.stop()
+        self.successAnimationView.stop()
+        self.failureAnimationView.stop()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -72,15 +102,14 @@ class AlertMessageView: MessageView {
         self.customTitleLabel.text = title
         switch type {
         case .success:
-            self.animationView = AnimationView(name: .successAnimation)
+            self.successAnimationView.isHidden = false
+            self.failureAnimationView.isHidden = true
+            self.successAnimationView.play()
         case .failure:
-            self.animationView = AnimationView(name: .failureAnimation)
+            self.successAnimationView.isHidden = true
+            self.failureAnimationView.isHidden = false
+            self.failureAnimationView.play()
         }
-        self.animationView.loopMode = .playOnce
-        self.animationView.animationSpeed = 1
-        self.animationView.contentMode = .scaleAspectFit
-        self.animationView.backgroundColor = .clear
-        self.animationView.play()
     }
     
 }
