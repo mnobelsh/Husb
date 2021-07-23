@@ -15,19 +15,21 @@ class TipsCollectionCell: UICollectionViewCell {
     private lazy var containerView = TipsCollectionCell.makeLayerView()
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.boldSystemFont(ofSize: 20)
+        label.font = UIFont.boldSystemFont(ofSize: 18)
         label.textColor = .jetBlack
         label.minimumScaleFactor = 0.5
         label.textAlignment = .center
+        label.adjustsFontSizeToFitWidth = true
         return label
     }()
     private lazy var descriptionLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 16)
+        label.font = UIFont.systemFont(ofSize: 14)
         label.textColor = .darkGray
         label.minimumScaleFactor = 0.5
         label.numberOfLines = 0
         label.textAlignment = .center
+        label.adjustsFontSizeToFitWidth = true
         return label
     }()
     
@@ -72,17 +74,17 @@ class TipsCollectionCell: UICollectionViewCell {
         }
         
         self.titleLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(25)
+            make.top.equalToSuperview().offset(15)
             make.leading.equalToSuperview().offset(15)
             make.trailing.equalToSuperview().offset(-15)
-            make.height.equalTo(22)
+            make.height.equalTo(20)
         }
         
         self.descriptionLabel.snp.makeConstraints { make in
             make.top.equalTo(self.titleLabel.snp.bottom).offset(10)
-            make.leading.equalToSuperview().offset(25)
-            make.trailing.equalToSuperview().offset(-25)
-            make.bottom.equalToSuperview().offset(-25)
+            make.leading.equalToSuperview().offset(15)
+            make.trailing.equalToSuperview().offset(-15)
+            make.bottom.equalToSuperview().offset(-15)
         }
 
         
