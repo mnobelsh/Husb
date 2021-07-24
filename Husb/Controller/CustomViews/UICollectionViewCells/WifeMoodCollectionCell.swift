@@ -20,6 +20,8 @@ class WifeMoodCollectionCell: UICollectionViewCell {
         label.minimumScaleFactor = 0.6
         label.numberOfLines = 0
         label.isSkeletonable = true
+        label.lastLineFillPercent = 50
+        label.linesCornerRadius = 5
         return label
     }()
     private lazy var moodImageView: UIImageView = {
@@ -27,6 +29,7 @@ class WifeMoodCollectionCell: UICollectionViewCell {
         imageView.contentMode = .scaleAspectFit
         imageView.backgroundColor = .clear
         imageView.isSkeletonable = true
+        imageView.skeletonCornerRadius = 10
         return imageView
     }()
     

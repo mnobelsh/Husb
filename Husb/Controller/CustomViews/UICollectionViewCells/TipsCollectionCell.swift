@@ -20,6 +20,9 @@ class TipsCollectionCell: UICollectionViewCell {
         label.minimumScaleFactor = 0.5
         label.textAlignment = .center
         label.adjustsFontSizeToFitWidth = true
+        label.isSkeletonable = true
+        label.lastLineFillPercent = 50
+        label.linesCornerRadius = 5
         return label
     }()
     private lazy var descriptionLabel: UILabel = {
@@ -30,6 +33,9 @@ class TipsCollectionCell: UICollectionViewCell {
         label.numberOfLines = 0
         label.textAlignment = .center
         label.adjustsFontSizeToFitWidth = true
+        label.isSkeletonable = true
+        label.lastLineFillPercent = 50
+        label.linesCornerRadius = 5
         return label
     }()
     

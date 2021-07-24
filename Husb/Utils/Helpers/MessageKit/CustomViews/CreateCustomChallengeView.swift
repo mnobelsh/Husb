@@ -95,6 +95,7 @@ class CreateCustomChallengeView: MessageView {
         textView.text = "Challenge descriptions..."
         textView.backgroundColor = .ghostWhite
         textView.font = UIFont.systemFont(ofSize: 16)
+        textView.textColor = .jetBlack
         textView.delegate = self
         return textView
     }()

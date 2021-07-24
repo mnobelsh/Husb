@@ -58,7 +58,11 @@ class DashboardExploreViewController: UIViewController {
     private var forYouAndSoulmateChallenges = ChallengeDomain.allChallenges
     private var mostSavedChallenges = ChallengeDomain.allChallenges
     private var hubbyChallenges = ChallengeDomain.allChallenges
-    private var currentUser: UserDomain?
+    private var currentUser: UserDomain? {
+        didSet {
+            self.exploreCollectionView.reloadData()
+        }
+    }
 
     // MARK: - SubViews
     private lazy var exploreCollectionView: ExploreCollectionView = ExploreCollectionView(frame: self.view.frame)
@@ -161,6 +165,7 @@ extension DashboardExploreViewController: UICollectionViewDataSource {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ExploreCollectionHeaderView.identifier, for: indexPath) as? ExploreCollectionHeaderView else { return UICollectionViewCell() }
             cell.heroID = "HeaderHero"
             cell.delegate = self
+            cell.fill(with: self.currentUser)
             return cell
         case .loveLanguage:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LoveLanguageCollectionCell.identifier, for: indexPath) as? LoveLanguageCollectionCell else { return UICollectionViewCell() }
@@ -246,7 +251,16 @@ extension DashboardExploreViewController: UICollectionViewDelegate {
 
 // MARK: - DashboardExploreViewController+ExploreCollectionHeaderViewDelegate
 extension DashboardExploreViewController: ExploreCollectionHeaderViewDelegate {
-
+    
+    func exploreCollectionHeaderView(_ view: ExploreCollectionHeaderView, didTapHeaderView headerView: UIView) {
+        let messageViewId = UUID().uuidString
+        MessageKit.showConnectWithWifeAlert(withId: messageViewId, duration: .forever) {
+            guard let tabBarController = self.tabBarController, let viewControllersCount = tabBarController.viewControllers?.count  else { return }
+            self.tabBarController?.selectedIndex = viewControllersCount - 1
+            MessageKit.hide(id: messageViewId)
+        }
+    }
+    
     func exploreCollectionSearchBarDidBeginEditing(
         _ searchBar: UISearchBar,
         cell: ExploreCollectionHeaderView

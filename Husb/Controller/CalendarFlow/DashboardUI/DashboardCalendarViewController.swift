@@ -397,7 +397,7 @@ extension DashboardCalendarViewController: UICollectionViewDataSource {
             case .completed:
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CompletedChallengeCollectionCell.identifier, for: indexPath) as? CompletedChallengeCollectionCell else { return EmptyCollectionViewCell() }
                 if self.completedChallenges.isEmpty {
-                    cell.fill(title: "You haven't been completed any challenge", description: "Finish your uncompleted challenges to make another beautiful moments with your partner ❤️")
+                    cell.fill(title: "You haven't been completed any challenge", description: "Finish your uncompleted challenges to create another beautiful moments with your partner ❤️")
                 } else {
                     cell.fill(challenge: self.completedChallenges[indexPath.row])
                 }

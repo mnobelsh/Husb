@@ -226,7 +226,7 @@ extension ConnectProfileViewController {
         let imageView = UIImageView(image: user.profileImage ?? image)
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
-        imageView.backgroundColor = .spaceGrey
+        imageView.backgroundColor = .pearlWhite
         imageView.layer.cornerRadius = 10
         
         let roleLabel = UILabel()

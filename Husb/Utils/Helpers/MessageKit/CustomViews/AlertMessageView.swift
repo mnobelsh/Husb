@@ -17,7 +17,7 @@ class AlertMessageView: MessageView {
             make.width.height.equalTo(65)
         }
         animationView.loopMode = .playOnce
-        animationView.animationSpeed = 1
+        animationView.animationSpeed = 0.7
         animationView.contentMode = .scaleAspectFit
         animationView.backgroundColor = .clear
         return animationView
@@ -28,7 +28,7 @@ class AlertMessageView: MessageView {
             make.width.height.equalTo(65)
         }
         animationView.loopMode = .playOnce
-        animationView.animationSpeed = 1
+        animationView.animationSpeed = 0.7
         animationView.contentMode = .scaleAspectFit
         animationView.backgroundColor = .clear
         return animationView

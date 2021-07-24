@@ -23,6 +23,8 @@ class DefaultChallengeCollectionCell: UICollectionViewCell {
         label.minimumScaleFactor = 0.6
         label.numberOfLines = 2
         label.isSkeletonable = true
+        label.lastLineFillPercent = 50
+        label.linesCornerRadius = 5
         return label
     }()
     private lazy var categoryCollectionView: ChallengeCategoryCollectionView = {
@@ -37,6 +39,7 @@ class DefaultChallengeCollectionCell: UICollectionViewCell {
         imageView.backgroundColor = .clear
         imageView.clipsToBounds = true
         imageView.isSkeletonable = true
+        imageView.skeletonCornerRadius = 10
         return imageView
     }()
     private lazy var mainContainerView: UIView = {

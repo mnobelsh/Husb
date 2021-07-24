@@ -144,6 +144,7 @@ class CompletedChallengeNotificationViewController: UIViewController {
         textView.backgroundColor = .ghostWhite
         textView.font = UIFont.systemFont(ofSize: 16)
         textView.delegate = self
+        textView.textColor = .jetBlack
         return textView
     }()
     lazy var doneButton: UIButton = {

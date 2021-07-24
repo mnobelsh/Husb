@@ -68,7 +68,6 @@ class DetailChallengeViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        self.saveChallenge { _ in }
         self.disableHero()
     }
     
@@ -355,6 +354,7 @@ extension DetailChallengeViewController: DetailChallengeStepCollectionCellDelega
             challenge.isCompleted = false
         }
         self.challenge?.isCompleted = challenge.isCompleted
+        self.saveChallenge { _ in }
         guard let indexPath = self.collectionView.indexPath(for: cell) else { return }
         self.collectionView.performBatchUpdates {
             self.collectionView.reloadItems(at: [indexPath])
@@ -380,11 +380,23 @@ extension DetailChallengeViewController: DetailChallengeFunFactCollectionCellDel
 extension DetailChallengeViewController: DetailChallengeCollectionHeaderViewDelegate {
     
     func detailChallengeCollectionHeaderView(_ view: UICollectionViewCell, didTapSaveButton button: UIButton) {
-        MessageKit.showLoadingView()
-        self.challenge?.addedDate =  Date()
-        self.saveChallenge { savedChallenge in
-            MessageKit.hideLoadingView()
-            self.challenge = savedChallenge
+        if let currentUser = self.currentUser, currentUser.connectedUserId == nil  {
+            let messageViewId = UUID().uuidString
+            MessageKit.showConnectWithWifeAlert(withId: messageViewId, duration: .forever) {
+                guard let tabBarController = self.tabBarController, let viewControllersCount = tabBarController.viewControllers?.count  else { return }
+                self.tabBarController?.selectedIndex = viewControllersCount - 1
+                MessageKit.hide(id: messageViewId)
+            }
+        } else {
+            if let isActive = self.challenge?.isActive, !isActive {
+                MessageKit.showLoadingView()
+                self.challenge?.addedDate =  Date()
+                self.saveChallenge { savedChallenge in
+                    MessageKit.hideLoadingView()
+                    self.challenge = savedChallenge
+                    MessageKit.showAlertMessageView(title: "Challenge has been saved.", type: .success)
+                }
+            }
         }
     }
     
@@ -396,8 +408,10 @@ extension DetailChallengeViewController: UIImagePickerControllerDelegate, UINavi
         MessageKit.showLoadingView()
         guard let image = info[.editedImage] as? UIImage else { return }
         self.challenge?.momentImage = image
-        MessageKit.hideLoadingView()
-        picker.dismiss(animated: true, completion: nil)
+        self.saveChallenge { _ in
+            MessageKit.hideLoadingView()
+            picker.dismiss(animated: true, completion: nil)
+        }
     }
     
 }

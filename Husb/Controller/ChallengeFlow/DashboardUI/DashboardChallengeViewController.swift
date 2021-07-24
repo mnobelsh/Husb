@@ -148,7 +148,7 @@ private extension DashboardChallengeViewController {
     }
     
     func fetchUserChallenges(userId: String, completion: @escaping() -> Void) {
-        self.challengeCollectionView.showAnimatedGradientSkeleton()
+        self.challengeCollectionView.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: .ghostWhite))
         let requestValue = FetchUserChallengesUseCaseRequest(
             userId: userId,
             objective: .all

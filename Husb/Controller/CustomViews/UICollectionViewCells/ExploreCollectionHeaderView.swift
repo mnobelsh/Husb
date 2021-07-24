@@ -19,6 +19,11 @@ protocol ExploreCollectionHeaderViewDelegate: AnyObject {
         didCreateNewChallenge challenge: ChallengeDomain
     )
     
+    func exploreCollectionHeaderView(
+        _ view: ExploreCollectionHeaderView,
+        didTapHeaderView headerView: UIView
+    )
+    
 }
 
 
@@ -27,6 +32,7 @@ class ExploreCollectionHeaderView: UICollectionViewCell {
     static let identifier: String = String(describing: ExploreCollectionHeaderView.self)
     
     weak var delegate: ExploreCollectionHeaderViewDelegate?
+    private var currentUser: UserDomain?
     
     // MARK: - SubViews
     private lazy var titleLabel: UILabel = {
@@ -104,6 +110,10 @@ class ExploreCollectionHeaderView: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func fill(with user: UserDomain?) {
+        self.currentUser = user
+    }
+    
 }
 
 // MARK: - Private Functions
@@ -129,16 +139,21 @@ private extension ExploreCollectionHeaderView {
     
     @objc
     func onHeaderViewDidTap(_ sender: UITapGestureRecognizer) {
-        let messageId = UUID().uuidString
-        let confirmAction = { (_ challenge: ChallengeDomain) in
-            MessageKit.hide(id: messageId)
-            guard let delegate = self.delegate else { return }
-            delegate.exploreCollectionHeaderView(self, didCreateNewChallenge: challenge)
+        guard let currentUser = self.currentUser else { return }
+        if currentUser.connectedUserId == nil {
+            self.delegate?.exploreCollectionHeaderView(self, didTapHeaderView: self.mainContainerView)
+        } else {
+            let messageId = UUID().uuidString
+            let confirmAction = { (_ challenge: ChallengeDomain) in
+                MessageKit.hide(id: messageId)
+                guard let delegate = self.delegate else { return }
+                delegate.exploreCollectionHeaderView(self, didCreateNewChallenge: challenge)
+            }
+            MessageKit.showCreateCustomChallengeView(
+                withId: messageId,
+                confirmAction: confirmAction
+            )
         }
-        MessageKit.showCreateCustomChallengeView(
-            withId: messageId,
-            confirmAction: confirmAction
-        )
     }
     
 }

@@ -34,6 +34,9 @@ class ChallengeRequestNotificationViewController: UIViewController {
     private var request: ChallengeRequestNotificationViewControllerRequest!
     private var useCase: UseCaseFactory!
     
+    private var challenge: ChallengeDomain?
+    private var currentUser: UserDomain?
+    
     // MARK: - SubViews
     lazy var contentContainerView: UIView = {
         let view = UIView()
@@ -227,6 +230,9 @@ private extension ChallengeRequestNotificationViewController {
         
         MessageKit.showLoadingView()
         guard let userId = UserDefaultStorage.shared.getValue(forKey: .currentUserId) as? String else { return }
+        self.useCase.fetchUserUseCase().execute(.init(parameter: .current)) { result in
+            self.currentUser = try? result.get().user
+        }
         self.useCase.fetchUserChallengesUseCase().execute(
             .init(
                 userId: userId,
@@ -234,6 +240,7 @@ private extension ChallengeRequestNotificationViewController {
             )) { result in
             DispatchQueue.main.async {
                 guard let challenge = try? result.get().challenges.first else { return }
+                self.challenge = challenge
                 self.titleLabel.text = challenge.title
                 guard let challengeDueDate = challenge.dueDate else { return }
                 self.dueDateLabel.text = "Due Date: \(challengeDueDate.getString(withFormat: "d MMMM YYYY"))"
@@ -245,20 +252,24 @@ private extension ChallengeRequestNotificationViewController {
     
     @objc
     func onAcceptButtonDidTap(_ sender: UIButton) {
-        
+        MessageKit.showAlertMessageView(title: "New challenge has been added.", type: .success)
     }
     
     @objc
     func onSaveItForLaterButtonDidTap(_ sender: UIButton) {
-        
+        MessageKit.showAlertMessageView(title: "New challenge has been saved.", type: .success)
     }
     
     @objc
     func onChangeDateButtonDidTap(_ sender: UIButton) {
         let messageId = UUID().uuidString
         let confirmAction = { (date: Date?) in
-            guard let _ = date else { return }
             MessageKit.hide(id: messageId)
+            guard let selectedDate = date else { return }
+            self.challenge?.dueDate = selectedDate
+            guard let savedChallenge = self.challenge, let currentUserId = self.currentUser?.id, let connectedUserId = self.currentUser?.connectedUserId else { return }
+            self.useCase.saveUserChallengeUseCase().execute(.init(currentUserId: currentUserId, connectedUserId: connectedUserId, challenge: savedChallenge)) { _ in
+            }
         }
         let dismissAction = {
             MessageKit.hide(id: messageId)

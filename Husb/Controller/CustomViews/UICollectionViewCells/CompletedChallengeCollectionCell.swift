@@ -24,6 +24,8 @@ class CompletedChallengeCollectionCell: UICollectionViewCell {
         label.textColor = .jetBlack
         label.numberOfLines = 0
         label.isSkeletonable = true
+        label.lastLineFillPercent = 50
+        label.linesCornerRadius = 5
         return label
     }()
     lazy var categoryCollectionView: ChallengeCategoryCollectionView = ChallengeCategoryCollectionView(frame: self.bounds)
@@ -36,6 +38,9 @@ class CompletedChallengeCollectionCell: UICollectionViewCell {
         label.textColor = .darkGray
         label.numberOfLines = 0
         label.textAlignment = .justified
+        label.isSkeletonable = true
+        label.lastLineFillPercent = 50
+        label.linesCornerRadius = 5
         return label
     }()
     lazy var imageView: UIImageView = {
@@ -43,6 +48,8 @@ class CompletedChallengeCollectionCell: UICollectionViewCell {
         imageView.contentMode = .scaleAspectFit
         imageView.layer.cornerRadius = 15
         imageView.clipsToBounds = true
+        imageView.isSkeletonable = true
+        imageView.skeletonCornerRadius = 10
         return imageView
     }()
     
