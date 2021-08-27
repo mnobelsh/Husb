@@ -86,6 +86,7 @@ class MessageFromWifeNotificationViewController: UIViewController {
         textView.layer.borderWidth = 2
         textView.layer.borderColor = UIColor.seaBlue.cgColor
         textView.layer.cornerRadius = 15
+        textView.backgroundColor = .ghostWhite
         return textView
     }()
     lazy var dateLabel: UILabel = {

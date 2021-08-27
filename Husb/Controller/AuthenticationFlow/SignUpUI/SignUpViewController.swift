@@ -188,12 +188,11 @@ class SignUpViewController: UIViewController {
             make.leading.equalToSuperview().offset(10)
             make.trailing.equalToSuperview().offset(-10)
             make.bottom.equalToSuperview().offset(-5)
+            make.height.equalTo(20)
         }
         imageView.snp.makeConstraints { make in
-            make.leading.top.equalToSuperview().offset(10)
-            make.trailing.equalToSuperview().offset(-10)
-            make.height.equalTo(imageView.snp.width)
-            make.bottom.greaterThanOrEqualTo(titleLabel.snp.top).offset(-10)
+            make.leading.top.trailing.equalToSuperview().inset(10)
+            make.bottom.equalTo(titleLabel.snp.top).offset(-5)
         }
         
         return view
@@ -226,12 +225,11 @@ class SignUpViewController: UIViewController {
             make.leading.equalToSuperview().offset(10)
             make.trailing.equalToSuperview().offset(-10)
             make.bottom.equalToSuperview().offset(-5)
+            make.height.equalTo(20)
         }
         imageView.snp.makeConstraints { make in
-            make.leading.top.equalToSuperview().offset(10)
-            make.trailing.equalToSuperview().offset(-10)
-            make.height.equalTo(imageView.snp.width)
-            make.bottom.greaterThanOrEqualTo(titleLabel.snp.top).offset(-10)
+            make.leading.top.trailing.equalToSuperview().inset(10)
+            make.bottom.equalTo(titleLabel.snp.top).offset(-5)
         }
 
         return view
@@ -241,6 +239,7 @@ class SignUpViewController: UIViewController {
         view.backgroundColor = .pearlWhite
         view.dropShadow()
         view.layer.cornerRadius = 15
+        view.clipsToBounds = true
         
         let titleLabel = UILabel()
         titleLabel.text = "Which one are you?"
@@ -262,14 +261,14 @@ class SignUpViewController: UIViewController {
         self.hubbyOption.snp.makeConstraints { make in
             make.top.equalTo(titleLabel.snp.bottom).offset(10)
             make.leading.equalToSuperview().offset(10)
-            make.bottom.equalToSuperview().offset(-10)
+            make.bottom.equalToSuperview().inset(10)
             make.width.equalTo(view.snp.width).dividedBy(2).offset(-15)
         }
         
         self.wifeyOption.snp.makeConstraints { make in
             make.top.equalTo(titleLabel.snp.bottom).offset(10)
             make.trailing.equalToSuperview().offset(-10)
-            make.bottom.equalToSuperview().offset(-10)
+            make.bottom.equalToSuperview().inset(10)
             make.width.equalTo(view.snp.width).dividedBy(2).offset(-15)
         }
         

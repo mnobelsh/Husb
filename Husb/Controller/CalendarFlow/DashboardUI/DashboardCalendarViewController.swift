@@ -122,7 +122,7 @@ class DashboardCalendarViewController: UIViewController {
         button.addTarget(self, action: #selector(self.onNextMonthButtonDidTap(_:)), for: .touchUpInside)
         return button
     }()
-    lazy var selectedMonthAndYearLabel: UILabel = {
+    lazy var currentCalendarDateLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.boldSystemFont(ofSize: 18)
         label.adjustsFontSizeToFitWidth = true
@@ -140,7 +140,7 @@ class DashboardCalendarViewController: UIViewController {
         let view = UIView()
         view.addSubview(self.prevMonthButton)
         view.addSubview(self.nextMonthButton)
-        view.addSubview(self.selectedMonthAndYearLabel)
+        view.addSubview(self.currentCalendarDateLabel)
         self.prevMonthButton.snp.makeConstraints { make in
             make.leading.equalToSuperview()
             make.centerY.equalToSuperview()
@@ -149,7 +149,7 @@ class DashboardCalendarViewController: UIViewController {
             make.trailing.equalToSuperview()
             make.centerY.equalToSuperview()
         }
-        self.selectedMonthAndYearLabel.snp.makeConstraints { make in
+        self.currentCalendarDateLabel.snp.makeConstraints { make in
             make.leading.equalTo(self.prevMonthButton.snp.trailing).offset(20)
             make.trailing.equalTo(self.nextMonthButton.snp.leading).offset(-20)
             make.top.bottom.equalTo(self.prevMonthButton)
@@ -243,7 +243,7 @@ private extension DashboardCalendarViewController {
     
     func configureSelectedMonthAndYear() {
         guard let selectedMonthAndYear = Calendar.current.date(from: .init(year: self.selectedYear, month: self.selectedMonth)) else { return }
-        self.selectedMonthAndYearLabel.text = selectedMonthAndYear.getString(withFormat: "MMMM YYYY")
+        self.currentCalendarDateLabel.text = selectedMonthAndYear.getString(withFormat: "MMMM YYYY")
         guard let numberOfDays = Calendar.current.range(of: .day, in: .month, for: selectedMonthAndYear) else { return }
         self.dayDates = numberOfDays.map({Calendar.current.date(from: .init(year: self.selectedYear, month: self.selectedMonth, day: $0)) ?? Date() })
     }

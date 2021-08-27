@@ -289,7 +289,7 @@ extension DashboardExploreViewController: ExploreCollectionHeaderViewDelegate {
                     guard let currentUserId = self.currentUser?.id, let connectedUserId = self.currentUser?.connectedUserId else { return }
                     let notification = NotificationDomain(
                         notificationType: .challengeRequest,
-                        title: "You got new challenge",
+                        title: "You've got a new challenge",
                         message: "new challenge have been added to your current challenge.",
                         challengeId: challenge.id,
                         date: Date(),

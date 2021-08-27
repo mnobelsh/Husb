@@ -34,10 +34,10 @@ class CompletedChallengeCollectionCell: UICollectionViewCell {
         label.text = "Challenge Title"
         label.font = UIFont.systemFont(ofSize: 14)
         label.adjustsFontSizeToFitWidth = true
-        label.minimumScaleFactor = 0.6
+        label.minimumScaleFactor = 0.5
         label.textColor = .darkGray
         label.numberOfLines = 0
-        label.textAlignment = .justified
+        label.textAlignment = .left
         label.isSkeletonable = true
         label.lastLineFillPercent = 50
         label.linesCornerRadius = 5
@@ -94,9 +94,9 @@ class CompletedChallengeCollectionCell: UICollectionViewCell {
         }
         
         self.descriptionLabel.snp.makeConstraints { make in
-            make.top.equalTo(self.categoryCollectionView.snp.bottom).offset(15)
+            make.top.equalTo(self.categoryCollectionView.snp.bottom).offset(10)
             make.leading.equalToSuperview().offset(15)
-            make.trailing.equalTo(self.imageView.snp.leading).offset(-20)
+            make.trailing.equalTo(self.imageView.snp.leading).offset(-15)
             make.bottom.equalToSuperview().offset(-25)
         }
         

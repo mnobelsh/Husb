@@ -301,7 +301,7 @@ extension DetailChallengeViewController: DetailChallengeActionCollectionCellDele
                             MessageKit.showAlertMessageView(title: "New challenge has been added.", type: .success)
                             let notification = NotificationDomain(
                                 notificationType: .challengeRequest,
-                                title: "You got new challenge",
+                                title: "You've got a new challenge",
                                 message: "new challenge have been added to your current challenge.",
                                 challengeId: request.challenge.id,
                                 date: Date(),

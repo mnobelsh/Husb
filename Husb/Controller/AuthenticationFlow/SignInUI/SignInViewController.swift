@@ -98,7 +98,7 @@ class SignInViewController: UIViewController {
         stackView.axis = .vertical
         stackView.spacing = 25
         stackView.alignment = .fill
-        stackView.distribution = .fill
+        stackView.distribution = .fillEqually
         return stackView
     }()
     lazy var dontHaveAccountButton: UIButton = {
@@ -195,7 +195,7 @@ class SignInViewController: UIViewController {
             make.top.greaterThanOrEqualTo(self.signInImageView.snp.bottom).offset(25)
             make.leading.equalToSuperview().offset(25)
             make.trailing.equalToSuperview().offset(-25)
-            make.bottom.equalTo(self.signInWarningLabel.snp.top).offset(-45)
+            make.height.equalTo(100)
         }
         self.dontHaveAccountButton.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(35)

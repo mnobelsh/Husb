@@ -11,12 +11,39 @@
         }
       },
       {
+        "package": "CryptoSwift",
+        "repositoryURL": "https://github.com/krzyzanowskim/CryptoSwift",
+        "state": {
+          "branch": null,
+          "revision": "8d4f6384e0a8cc41f2005247241dd553963a492a",
+          "version": "1.4.1"
+        }
+      },
+      {
         "package": "Hero",
         "repositoryURL": "https://github.com/HeroTransitions/Hero.git",
         "state": {
           "branch": null,
           "revision": "efa709686035831b23b7bf58f652b0c4b892aa1d",
           "version": "1.6.1"
+        }
+      },
+      {
+        "package": "Reachability",
+        "repositoryURL": "https://github.com/ashleymills/Reachability.swift",
+        "state": {
+          "branch": null,
+          "revision": "c01bbdf2d633cf049ae1ed1a68a2020a8bda32e2",
+          "version": "5.1.0"
+        }
+      },
+      {
+        "package": "SkeletonView",
+        "repositoryURL": "https://github.com/Juanpe/SkeletonView",
+        "state": {
+          "branch": null,
+          "revision": "49fafccd3fbc9f403963a5952ece1713314481c7",
+          "version": "1.21.2"
         }
       },
       {
