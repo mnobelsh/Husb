@@ -13,7 +13,6 @@ struct SignUpViewControllerRequest {
 
 protocol SignUpViewControllerRoute {
     
-    
 }
 
 class SignUpViewController: UIViewController {

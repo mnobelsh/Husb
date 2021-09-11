@@ -25,6 +25,10 @@ protocol ChallengeListViewControllerRoute {
         request: DetailChallengeViewControllerRequest
     )
     
+    func showDetailTipsUI(
+        navigationController: UINavigationController?,
+        request: TipsViewControllerRequest
+    )
 }
 
 class ChallengeListViewController: UIViewController {
@@ -45,6 +49,7 @@ class ChallengeListViewController: UIViewController {
     
     private var challenges: [ChallengeDomain] = []
     private var tips: [TipsDomain] = []
+    private var displayedTips: [TipsDomain] = []
     
     // MARK: - SubViews
     lazy var headerView: UIView = {
@@ -74,6 +79,15 @@ class ChallengeListViewController: UIViewController {
         return label
     }()
     lazy var collectionView: ChallengeListCollectionView = ChallengeListCollectionView(frame: self.view.frame)
+    lazy var segmentedControl: UISegmentedControl = {
+        let segmentedControl = UISegmentedControl()
+        segmentedControl.selectedSegmentTintColor = .seaBlue
+        segmentedControl.backgroundColor = .clear
+        segmentedControl.insertSegment(withTitle: "Mental Health", at: 0, animated: true)
+        segmentedControl.insertSegment(withTitle: "Pregancy", at: 1, animated: true)
+        segmentedControl.addTarget(self, action: #selector(self.onSegmentedControlValueChanged(_:)), for: .valueChanged)
+        return segmentedControl
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -106,11 +120,7 @@ private extension ChallengeListViewController {
             make.top.leading.trailing.equalToSuperview()
             make.height.equalTo(120)
         }
-        self.collectionView.snp.makeConstraints { make in
-            make.leading.trailing.bottom.equalToSuperview()
-            make.top.equalTo(self.headerView.snp.bottom)
-            
-        }
+        self.setupUIForPage(self.request.forType)
         self.configureBackButton(with: .chevronLeft)
         self.view.setNeedsLayout()
         self.view.layoutIfNeeded()
@@ -144,6 +154,37 @@ private extension ChallengeListViewController {
         self.collectionView.reloadData()
     }
     
+    private func setupUIForPage(_ page: ChallengeListViewControllerRequest.PageType) {
+        switch page {
+        case .tips(let tips):
+            self.view.addSubview(self.segmentedControl)
+            self.segmentedControl.snp.makeConstraints { make in
+                make.leading.trailing.equalToSuperview().inset(15)
+                make.height.equalTo(48)
+                make.top.equalTo(self.headerView.snp.bottom).offset(15)
+            }
+            self.collectionView.snp.makeConstraints { make in
+                make.leading.trailing.bottom.equalToSuperview()
+                make.top.equalTo(self.segmentedControl.snp.bottom).offset(20)
+            }
+            self.segmentedControl.selectedSegmentIndex = 0
+            self.displayedTips = tips.filter({ $0.type == .mentalHealth })
+        default:
+            self.collectionView.snp.makeConstraints { make in
+                make.leading.trailing.bottom.equalToSuperview()
+                make.top.equalTo(self.headerView.snp.bottom)
+            }
+        }
+        self.view.setNeedsLayout()
+        self.view.layoutIfNeeded()
+    }
+    
+    @objc
+    func onSegmentedControlValueChanged(_ sender: UISegmentedControl) {
+        self.displayedTips = self.segmentedControl.selectedSegmentIndex == 0 ? self.tips.filter({ $0.type == .mentalHealth }) : self.tips.filter({ $0.type == .pregnancy })
+        self.collectionView.reloadData()
+    }
+    
 }
 
 // MARK: - ChallengeListViewController+UICollectionViewDataSource
@@ -154,7 +195,7 @@ extension ChallengeListViewController: UICollectionViewDataSource {
         case .loveLanguage,.saved:
             return self.challenges.count
         case .tips:
-            return self.tips.count
+            return self.displayedTips.count
         }
     }
     
@@ -166,7 +207,9 @@ extension ChallengeListViewController: UICollectionViewDataSource {
             return cell
         case .tips:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TipsCollectionCell.identifier, for: indexPath) as? TipsCollectionCell else { return UICollectionViewCell() }
-            cell.fill(tips: self.tips[indexPath.row])
+            var tips = self.displayedTips[indexPath.row]
+            tips.description = tips.description.prefix(50)+"..."
+            cell.fill(tips: tips)
             return cell
         }
     }
@@ -181,10 +224,13 @@ extension ChallengeListViewController: UICollectionViewDelegate {
         case .loveLanguage,.saved:
             self.route.showDetailChallengeUI(
                 navigationController: self.navigationController,
-                request: .init(challenge: self.challenges[indexPath.row])
+                request: DetailChallengeViewControllerRequest(challenge: self.challenges[indexPath.row])
             )
-        default:
-            break
+        case .tips:
+            self.route.showDetailTipsUI(
+                navigationController: self.navigationController,
+                request: TipsViewControllerRequest(tips: self.displayedTips[indexPath.row])
+            )
         }
     }
     

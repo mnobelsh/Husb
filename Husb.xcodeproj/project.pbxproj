@@ -65,6 +65,7 @@
 		FF31FE2F269E0BB2009890FF /* SaveUserUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF31FE2E269E0BB2009890FF /* SaveUserUseCase.swift */; };
 		FF31FE33269E0BD7009890FF /* FetchUserUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF31FE32269E0BD7009890FF /* FetchUserUseCase.swift */; };
 		FF31FE35269E34CF009890FF /* ValidateIsUserSignedInUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF31FE34269E34CF009890FF /* ValidateIsUserSignedInUseCase.swift */; };
+		FF3E626826ECC23A00B96B80 /* TipsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3E626726ECC23A00B96B80 /* TipsViewController.swift */; };
 		FF4968D42677439F00153484 /* ExploreCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4968D32677439F00153484 /* ExploreCollectionView.swift */; };
 		FF4968D72677847900153484 /* LoveLanguageCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4968D62677847900153484 /* LoveLanguageCollectionCell.swift */; };
 		FF4968D926778F2400153484 /* ExploreCollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4968D826778F2400153484 /* ExploreCollectionHeaderView.swift */; };
@@ -227,6 +228,7 @@
 		FF31FE2E269E0BB2009890FF /* SaveUserUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveUserUseCase.swift; sourceTree = "<group>"; };
 		FF31FE32269E0BD7009890FF /* FetchUserUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchUserUseCase.swift; sourceTree = "<group>"; };
 		FF31FE34269E34CF009890FF /* ValidateIsUserSignedInUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateIsUserSignedInUseCase.swift; sourceTree = "<group>"; };
+		FF3E626726ECC23A00B96B80 /* TipsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsViewController.swift; sourceTree = "<group>"; };
 		FF4968D32677439F00153484 /* ExploreCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreCollectionView.swift; sourceTree = "<group>"; };
 		FF4968D62677847900153484 /* LoveLanguageCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoveLanguageCollectionCell.swift; sourceTree = "<group>"; };
 		FF4968D826778F2400153484 /* ExploreCollectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreCollectionHeaderView.swift; sourceTree = "<group>"; };
@@ -591,6 +593,14 @@
 			path = User;
 			sourceTree = "<group>";
 		};
+		FF3E626626ECC21D00B96B80 /* TipsFlow */ = {
+			isa = PBXGroup;
+			children = (
+				FF3E626726ECC23A00B96B80 /* TipsViewController.swift */,
+			);
+			path = TipsFlow;
+			sourceTree = "<group>";
+		};
 		FF9A5B5F26A73CB900D697D4 /* Notificaiton */ = {
 			isa = PBXGroup;
 			children = (
@@ -742,6 +752,7 @@
 				FFDAC96D2674C04F000D3B3B /* ProfileFlow */,
 				FFDAC96C2674C046000D3B3B /* NotificationFlow */,
 				FFDAC9632674C007000D3B3B /* OnBoardingFlow */,
+				FF3E626626ECC21D00B96B80 /* TipsFlow */,
 				FF31FDB326962759009890FF /* CustomViews */,
 			);
 			path = Controller;
@@ -1281,6 +1292,7 @@
 				FF2166312686F81300F0F26F /* RoleDomain.swift in Sources */,
 				FFA978EC267F797E00CBB59C /* DetailChallengeActionCollectionCell.swift in Sources */,
 				FFDAC9CF26754425000D3B3B /* WifeMoodCollectionCell.swift in Sources */,
+				FF3E626826ECC23A00B96B80 /* TipsViewController.swift in Sources */,
 				FFDAC92C2674BAC7000D3B3B /* AppDIContainer.swift in Sources */,
 				FF21663426870C4500F0F26F /* AppDIContainer+ViewControllerRoute.swift in Sources */,
 				FFDAC9272674B9D1000D3B3B /* DashboardProfileViewController.swift in Sources */,

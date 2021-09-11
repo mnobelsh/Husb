@@ -11,6 +11,15 @@ import Hero
 
 extension AppDIContainer: ViewControllerRoute {
     
+    func showDetailTipsUI(
+        navigationController: UINavigationController?,
+        request: TipsViewControllerRequest
+    ) {
+        let viewController = TipsViewController.create(route: self, request: request, useCase: self)
+        navigationController?.hero.navigationAnimationType = .selectBy(presenting: .slide(direction: .up), dismissing: .slide(direction: .down))
+        navigationController?.pushViewController(viewController, animated: true)
+    }
+
     func showCompletedChallengeNotificationUI(
         navigationController: UINavigationController?,
         request: CompletedChallengeNotificationViewControllerRequest

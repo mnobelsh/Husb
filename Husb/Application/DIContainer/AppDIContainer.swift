@@ -23,7 +23,8 @@ typealias ViewControllerRoute =
     MessageFromWifeNotificationViewControllerRoute &
     ChallengeRequestNotificationViewControllerRoute &
     ConnectProfileViewControllerRoute &
-    CompletedChallengeNotificationViewControllerRoute
+    CompletedChallengeNotificationViewControllerRoute &
+    TipsViewControllerRoute
 
 
 enum AppInstructor {
